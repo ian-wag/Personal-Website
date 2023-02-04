@@ -1,21 +1,21 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import Header from "../components/Header.astro";
+import About from "../components/About.astro";
 ---
 
 <Layout title="Welcome to Astro.">
   <main>
-    <div>
-      <Header />
+    <div class="hero-subtitle">
+      <h2>Crafting websites that are as unique as you are</h2>
     </div>
+    <About />
   </main>
 </Layout>
 
 <style>
-  main {
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  .hero-subtitle h2 {
+    font-size: 30px;
+    font-weight: 600;
+    text-align: end;
   }
 </style>
