@@ -17,10 +17,12 @@ const { title } = Astro.props;
     <title>{title}</title>
   </head>
   <body>
-    <div class="flex">
-      <Header />
+    <div class="body-container">
+      <div class="flex">
+        <Header />
+      </div>
+      <slot />
     </div>
-    <slot />
   </body>
 </html>
 <style is:global>
@@ -60,6 +62,11 @@ const { title } = Astro.props;
     height: auto;
   }
 
+  a {
+    text-decoration: none;
+    color: var(--primary-text);
+  }
+
   :root {
     --accent: 124, 58, 237;
     --accent-gradient: linear-gradient(
@@ -68,14 +75,24 @@ const { title } = Astro.props;
       #da62c4 30%,
       white 60%
     );
+    --primary-text: #222831;
+    --primary-background: #eeeeee;
   }
   html {
     font-family: monospace, sans-serif;
-    background-color: #ffffff;
+    background-color: var(--primary-background);
+    color: var(--primary-text);
   }
   code {
     font-family: Menlo, Monaco, Lucida Console, Liberation Mono,
       DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace;
+  }
+
+  .body-container {
+    position: relative;
+    width: 98%;
+    max-width: 2550px;
+    margin: 0 auto;
   }
 
   .flex {
@@ -90,7 +107,7 @@ const { title } = Astro.props;
   }
 
   ::selection {
-    background: #000000;
-    color: #ffffff;
+    background: var(--primary-text);
+    color: var(--primary-background);
   }
 </style>
