@@ -65,23 +65,28 @@ const { title } = Astro.props;
   a {
     text-decoration: none;
     color: var(--primary-text);
+    transition: all 150ms ease-in-out;
   }
 
   :root {
-    --accent: 124, 58, 237;
-    --accent-gradient: linear-gradient(
-      45deg,
-      rgb(var(--accent)),
-      #da62c4 30%,
-      white 60%
-    );
     --primary-text: #222831;
     --primary-background: #eeeeee;
+  }
+
+  [data-theme="light"] {
+    --primary-text: #222831;
+    --primary-background: #eeeeee;
+  }
+
+  [data-theme="dark"] {
+    --primary-text: #eeeeee;
+    --primary-background: #222831;
   }
   html {
     font-family: monospace, sans-serif;
     background-color: var(--primary-background);
     color: var(--primary-text);
+    transition: all 0.1s ease-in-out;
   }
   code {
     font-family: Menlo, Monaco, Lucida Console, Liberation Mono,

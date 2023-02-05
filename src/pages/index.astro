@@ -11,11 +11,24 @@ import Work from "../components/Work.astro";
         &copy;{new Date().getFullYear()}
       </div>
     </div>
+    <div class="dark-light-toggle">
+      <p id="dark-light-toggle">go dark</p>
+    </div>
     <div class="hero-subtitle">
       <h2>Crafting websites that are as unique as you are</h2>
     </div>
     <About />
     <Work />
+    <script is:inline>
+      const darkLightBtn = document.querySelector("#dark-light-toggle");
+      const html = document.querySelector("html");
+
+      darkLightBtn.addEventListener("click", function () {
+        html.dataset.theme = html.dataset.theme === "dark" ? "light" : "dark";
+        darkLightBtn.innerText =
+          darkLightBtn.innerText === "go light" ? "go dark" : "go light";
+      });
+    </script>
   </main>
 </Layout>
 
@@ -24,6 +37,13 @@ import Work from "../components/Work.astro";
     position: absolute;
     top: 0;
     left: 0;
+  }
+  .dark-light-toggle {
+    position: absolute;
+    top: 0;
+    right: 0;
+    cursor: pointer;
+    user-select: none;
   }
   .hero-subtitle {
     margin-bottom: 20%;
