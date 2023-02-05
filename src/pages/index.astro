@@ -7,9 +7,9 @@ import Work from "../components/Work.astro";
 <Layout title="Ian Wagner | Web Dev">
   <main>
     <div class="time-date">
-      <div>
+      <p>
         &copy;{new Date().getFullYear()}
-      </div>
+      </p>
     </div>
     <div class="dark-light-toggle">
       <p id="dark-light-toggle">go dark</p>
@@ -28,6 +28,98 @@ import Work from "../components/Work.astro";
         darkLightBtn.innerText =
           darkLightBtn.innerText === "go light" ? "go dark" : "go light";
       });
+    </script>
+    <script is:inline>
+      const emojis = [
+        "😀",
+        "😎",
+        "🤔",
+        "😴",
+        "🤯",
+        "😷",
+        "😍",
+        "🤩",
+        "😜",
+        "🥳",
+        "👍",
+        "👎",
+        "💩",
+        "🤖",
+        "🧟",
+        "👻",
+        "🦊",
+        "🐻",
+        "🐶",
+        "🐱",
+        "🌞",
+        "⛈",
+        "❄️",
+        "🌊",
+        "🏞",
+        "🗻",
+        "🏔",
+        "🛸",
+        "🚀",
+        "🚲",
+        "🛴",
+        "🚗",
+        "🚕",
+        "✈️",
+        "🛳",
+        "⛵️",
+        "🚤",
+        "🏊",
+        "🚴",
+        "🏃",
+        "🎮",
+        "🎥",
+        "🎧",
+        "📖",
+        "💻",
+        "💡",
+        "📱",
+        "🛍",
+        "💰",
+        "🎁",
+      ];
+
+      const randomEmoji = () =>
+        emojis[Math.floor(Math.random() * emojis.length)];
+
+      const replaceWordsWithEmoji = () => {
+        const elements = document.querySelectorAll("p, h2, h3, span");
+        elements.forEach((element) => {
+          const words = element.textContent.split(" ");
+          const replaced = words.map((word) => randomEmoji()).join(" ");
+          element.textContent = replaced;
+        });
+      };
+
+      const originalTexts = [];
+      const restoreText = () => {
+        const elements = document.querySelectorAll("p, h2, h3, span");
+        elements.forEach((element, index) => {
+          element.textContent = originalTexts[index];
+        });
+      };
+
+      let isReplaced = false;
+      const toggleReplace = () => {
+        if (isReplaced) {
+          restoreText();
+          isReplaced = false;
+        } else {
+          const elements = document.querySelectorAll("p, h2, h3, span");
+          elements.forEach((element) => {
+            originalTexts.push(element.textContent);
+          });
+          replaceWordsWithEmoji();
+          isReplaced = true;
+        }
+      };
+
+      const button = document.querySelector(".emoji-toggle");
+      button.addEventListener("click", toggleReplace);
     </script>
   </main>
 </Layout>

@@ -2,11 +2,11 @@
 ---
 
 <div class="header-container">
-  <p class="logo-text">ian wagner</p>
+  <h1 class="logo-text">ian wagner</h1>
   <menu class="grid">
     <div class="header-links-1">
       <ul>
-        <li>Web Developer</li>
+        <li class="emoji-toggle">Web Developer</li>
         <li>Chicago</li>
       </ul>
     </div>
@@ -46,6 +46,11 @@
   .logo-text {
     font-size: clamp(60px, 15vw, 200px);
     font-weight: 700;
+  }
+
+  .emoji-toggle {
+    cursor: pointer;
+    user-select: none;
   }
 
   li {
