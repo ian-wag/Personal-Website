@@ -14,6 +14,7 @@ const { title } = Astro.props;
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
+    <link rel="stylesheet" href="https://use.typekit.net/uec6tst.css" />
     <title>{title}</title>
   </head>
   <body>
@@ -68,6 +69,30 @@ const { title } = Astro.props;
     transition: all 150ms ease-in-out;
   }
 
+  h1 {
+    font-family: anonymous-pro, monospace;
+    font-weight: 700;
+  }
+
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: lft-etica-mono, sans-serif;
+    font-weight: 500;
+    font-style: normal;
+  }
+
+  p,
+  li,
+  a,
+  span {
+    font-family: lft-etica-mono, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+
   :root {
     --primary-text: #222831;
     --primary-background: #eeeeee;
@@ -108,7 +133,7 @@ const { title } = Astro.props;
   .section-title {
     font-size: 2rem;
     text-transform: lowercase;
-    font-weight: 700;
+    font-weight: 500;
   }
 
   ::selection {
