@@ -12,7 +12,7 @@ import Work from "../components/Work.astro";
       </p>
     </div>
     <div class="dark-light-toggle">
-      <p id="dark-light-toggle">go dark</p>
+      <span id="dark-light-toggle">go dark</span>
     </div>
     <div class="hero-subtitle">
       <h2>Crafting websites that are as unique as you are</h2>
@@ -31,16 +31,16 @@ import Work from "../components/Work.astro";
     </script>
     <script is:inline>
       const emojis = [
-        "😀",
-        "😎",
-        "🤔",
-        "😴",
-        "🤯",
-        "😷",
-        "😍",
-        "🤩",
-        "😜",
-        "🥳",
+        "🤙",
+        "🧩",
+        "🥏",
+        "🎲",
+        "🎹",
+        "🎨",
+        "🎸",
+        "🎳",
+        "🏕️",
+        "🎻",
         "👍",
         "👎",
         "💩",
@@ -52,8 +52,8 @@ import Work from "../components/Work.astro";
         "🐶",
         "🐱",
         "🌞",
-        "⛈",
-        "❄️",
+        "🍤",
+        "🧊",
         "🌊",
         "🏞",
         "🗻",
@@ -64,13 +64,13 @@ import Work from "../components/Work.astro";
         "🛴",
         "🚗",
         "🚕",
-        "✈️",
+        "🍩",
         "🛳",
         "⛵️",
         "🚤",
         "🏊",
         "🚴",
-        "🏃",
+        "",
         "🎮",
         "🎥",
         "🎧",
@@ -87,7 +87,7 @@ import Work from "../components/Work.astro";
         emojis[Math.floor(Math.random() * emojis.length)];
 
       const replaceWordsWithEmoji = () => {
-        const elements = document.querySelectorAll("p, h2, h3, span");
+        const elements = document.querySelectorAll("p, h2, h3");
         elements.forEach((element) => {
           const words = element.textContent.split(" ");
           const replaced = words.map((word) => randomEmoji()).join(" ");
@@ -97,7 +97,7 @@ import Work from "../components/Work.astro";
 
       const originalTexts = [];
       const restoreText = () => {
-        const elements = document.querySelectorAll("p, h2, h3, span");
+        const elements = document.querySelectorAll("p, h2, h3");
         elements.forEach((element, index) => {
           element.textContent = originalTexts[index];
         });
@@ -109,7 +109,7 @@ import Work from "../components/Work.astro";
           restoreText();
           isReplaced = false;
         } else {
-          const elements = document.querySelectorAll("p, h2, h3, span");
+          const elements = document.querySelectorAll("p, h2, h3");
           elements.forEach((element) => {
             originalTexts.push(element.textContent);
           });
