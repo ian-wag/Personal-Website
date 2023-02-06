@@ -142,11 +142,16 @@ import Work from "../components/Work.astro";
     margin-bottom: 20%;
   }
   .hero-subtitle h2 {
-    font-size: 40px;
-    font-weight: 500;
-    opacity: 0.85;
+    font-size: clamp(1.8rem, -0.8333rem + 4.4444vw, 2.5rem);
     text-transform: lowercase;
-
     text-align: end;
+  }
+
+  @media only screen and (max-width: 761px) {
+    .hero-subtitle h2 {
+      text-align: center;
+      line-height: 1.4;
+      margin-top: 15%;
+    }
   }
 </style>

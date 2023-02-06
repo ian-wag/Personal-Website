@@ -44,7 +44,7 @@ import Logo from "./Logo.astro";
   .header-container {
     margin-top: 20vh;
     z-index: 100;
-    width: 90%;
+    width: 100%;
   }
   .logo-text {
     font-size: clamp(60px, 15vw, 200px);
@@ -73,6 +73,20 @@ import Logo from "./Logo.astro";
     padding-left: 0;
   }
 
+  @media only screen and (max-width: 761px) {
+    .grid {
+      display: block;
+      transform: translateY(0vw);
+    }
+    .header-links-1 li,
+    .header-links-2 li,
+    .header-links-3 li,
+    .header-links-4 li,
+    .header-links-5 li {
+      display: flex;
+      justify-content: flex-end;
+    }
+  }
   .header-links-1 {
     grid-area: 1/1/2/3;
   }
