@@ -3,13 +3,23 @@ import Logo from "./Logo.astro";
 ---
 
 <div class="header-container">
+  <div class="dark-mode-time-container">
+    <div class="time-date">
+      <p>
+        &copy;{new Date().getFullYear()}
+      </p>
+    </div>
+    <div class="dark-light-toggle">
+      <span id="dark-light-toggle">go dark</span>
+    </div>
+  </div>
   <Logo />
 
   <nav class="grid">
     <div class="header-links-1">
       <ul>
         <li class="emoji-toggle">Web Developer</li>
-        <li>Chicago</li>
+        <li class="random-color">Chicago</li>
       </ul>
     </div>
     <div class="header-links-2">
@@ -42,7 +52,6 @@ import Logo from "./Logo.astro";
 
 <style>
   .header-container {
-    margin-top: 20vh;
     z-index: 100;
     width: 100%;
   }
@@ -59,6 +68,21 @@ import Logo from "./Logo.astro";
     user-select: none;
   }
 
+  .emoji-toggle:hover {
+    background-color: green;
+  }
+
+  .dark-mode-time-container {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10vh;
+  }
+
+  .dark-light-toggle {
+    cursor: pointer;
+    user-select: none;
+  }
+
   li {
     text-transform: uppercase;
   }
@@ -69,7 +93,7 @@ import Logo from "./Logo.astro";
     grid-column-gap: 1rem;
     grid-row-gap: 0;
     width: 100%;
-    transform: translateY(-2.4vw);
+    transform: translateY(-2.8vw);
     padding-left: 0;
   }
 
@@ -102,5 +126,9 @@ import Logo from "./Logo.astro";
   }
   .header-links-5 {
     grid-area: 1/8/1/9;
+  }
+
+  .header-container a:hover {
+    background-color: green;
   }
 </style>

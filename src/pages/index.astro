@@ -6,14 +6,6 @@ import Work from "../components/Work.astro";
 
 <Layout title="Ian Wagner | Web Dev">
   <main>
-    <div class="time-date">
-      <p>
-        &copy;{new Date().getFullYear()}
-      </p>
-    </div>
-    <div class="dark-light-toggle">
-      <span id="dark-light-toggle">go dark</span>
-    </div>
     <div class="hero-subtitle">
       <h2>Innovative web design for a dynamic world</h2>
     </div>
@@ -29,7 +21,7 @@ import Work from "../components/Work.astro";
           darkLightBtn.innerText === "go light" ? "go dark" : "go light";
       });
     </script>
-    <script is:inline>
+    <script>
       const emojis = [
         "🤙",
         "🧩",
@@ -125,18 +117,6 @@ import Work from "../components/Work.astro";
 </Layout>
 
 <style>
-  .time-date {
-    position: absolute;
-    top: 0;
-    left: 0;
-  }
-  .dark-light-toggle {
-    position: absolute;
-    top: 0;
-    right: 0;
-    cursor: pointer;
-    user-select: none;
-  }
   .hero-subtitle {
     margin-top: 5%;
     margin-bottom: 20%;
