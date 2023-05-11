@@ -1,0 +1,59 @@
+---
+---
+
+<section id="contact">
+  <div class="section-content">
+    <h3 class="section-title">contact</h3>
+    <!-- <form
+      action="/success"
+      class="contact__form grid"
+      enctype="application/x-www-form-urlencoded"
+      id="form-contact"
+      method="POST"
+      name="form-contact"
+    > -->
+    <form>
+      <input type="hidden" name="form-name" value="form-contact" />
+      <div class="contact__inputs grid">
+        <div class="contact__content">
+          <label for="name" class="contact__label">name</label>
+          <input id="name" name="name" type="text" class="contact__input" required="" />
+        </div>
+        <div class="contact__content">
+          <label for="form-email" class="contact__label">email</label>
+          <input
+            id="form-email"
+            name="form-email"
+            type="email"
+            class="contact__input"
+            required=""
+          />
+        </div>
+      </div>
+      <div class="contact__content">
+        <label for="form-message" class="contact__label">message</label>
+        <textarea
+          name="message"
+          id="form-message"
+          cols="0"
+          rows="8"
+          class="contact__input"
+          required=""
+          style="width: 410px; height: 165px;"
+          spellcheck="false"></textarea>
+      </div>
+      <div class="contact__button">
+        <button class="button button--flex button--form" type="submit" form="form-contact">
+          Send Message <i class="uil uil-message button__icon"></i>
+        </button>
+      </div>
+    </form>
+  </div>
+</section>
+<style>
+  .section-content {
+    max-width: 50%;
+    width: 100%;
+    margin-right: auto;
+  }
+</style>

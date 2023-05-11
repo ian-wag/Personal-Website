@@ -1,5 +1,5 @@
 ---
-import Header from "../components/Header.astro";
+import Header from '../components/Header.astro';
 export interface Props {
   title: string;
 }
@@ -24,8 +24,13 @@ const { title } = Astro.props;
       </div>
       <slot />
     </div>
+    <!-- <div class="blob-cont">
+      <div class="grey1 blob"></div>
+      <div class="grey2 blob"></div>
+    </div> -->
   </body>
 </html>
+
 <style is:global>
   html {
     box-sizing: border-box;
@@ -94,18 +99,26 @@ const { title } = Astro.props;
   }
 
   :root {
-    --primary-text: #222831;
-    --primary-background: #eeeeee;
-  }
-
-  [data-theme="light"] {
-    --primary-text: #222831;
-    --primary-background: #eeeeee;
-  }
-
-  [data-theme="dark"] {
     --primary-text: #eeeeee;
-    --primary-background: #222831;
+    --primary-background: #0c0c0c;
+    --grey1: #353535;
+    --grey2: #272727;
+    --easeInCubic: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+    --easeOutCubic: cubic-bezier(0.215, 0.61, 0.355, 1);
+  }
+
+  [data-theme='light'] {
+    --primary-text: #0c0c0c;
+    --primary-background: #eeeeee;
+    --grey1: #a6aacf;
+    --grey2: #9493e0;
+  }
+
+  [data-theme='dark'] {
+    --primary-text: #eeeeee;
+    --primary-background: #0c0c0c;
+    --grey1: #353535;
+    --grey2: #272727;
   }
   html {
     font-family: monospace, sans-serif;
@@ -114,8 +127,8 @@ const { title } = Astro.props;
     transition: all 0.1s ease-in-out;
   }
   code {
-    font-family: Menlo, Monaco, Lucida Console, Liberation Mono,
-      DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace;
+    font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
+      Bitstream Vera Sans Mono, Courier New, monospace;
   }
 
   .body-container {
@@ -123,6 +136,7 @@ const { title } = Astro.props;
     width: 98%;
     max-width: 2550px;
     margin: 0 auto;
+    height: 2000px;
   }
 
   .flex {
@@ -133,6 +147,92 @@ const { title } = Astro.props;
   .section-title {
     font-size: 2rem;
     text-transform: lowercase;
+  }
+  /* .blob-cont {
+    position: absolute;
+    z-index: -20;
+    top: 0;
+    left: 0;
+    height: 120%;
+    width: 100vw;
+    overflow-x: hidden;
+  }
+
+  .blob {
+    filter: blur(60px);
+  }
+
+  .grey1 {
+    background-color: var(--grey1);
+    position: absolute;
+    height: 30vh;
+    width: 30vw; 
+    border-radius: 10%; 
+    animation: grey1 60s infinite ease;
+  }
+
+  .grey2 {
+    background-color: var(--grey2);
+    position: absolute;
+    height: 60vh; 
+    width: 50vw;
+    border-radius: 20%; 
+    animation: grey2 120s infinite ease;
+  }
+
+  @keyframes grey1 {
+    0% {
+      top: 10vh;
+      left: 10vw;
+      transform: scale(1) rotate(0deg);
+    }
+    30% {
+      top: 20vh;
+      left: 20vw;
+      transform: scale(1.2) rotate(120deg);
+    }
+    60% {
+      top: 30vh;
+      left: 30vw;
+      transform: scale(1.3) rotate(240deg);
+    }
+    100% {
+      top: 10vh;
+      left: 10vw;
+      transform: scale(1) rotate(360deg);
+    }
+  }
+
+  @keyframes grey2 {
+    0% {
+      top: 30vh;
+      right: 30vw;
+      transform: scale(1.2) rotate(0deg);
+    }
+    30% {
+      top: 20vh;
+      right: 20vw;
+      transform: scale(1) rotate(-120deg);
+    }
+    60% {
+      top: 10vh;
+      right: 10vw;
+      transform: scale(1) rotate(-240deg);
+    }
+    100% {
+      top: 30vh;
+      right: 30vw;
+      transform: scale(1.2) rotate(-360deg);
+    }
+  } */
+
+  .sticky {
+    position: fixed;
+    width: 98%;
+    z-index: 22;
+    margin-top: -1rem;
+    transition: top 0.4s var(--easeOutCubic), transform 0.4s var(--easeOutCubic);
+    transform: translateY(0vw);
   }
 
   ::selection {

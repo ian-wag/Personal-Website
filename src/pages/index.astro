@@ -1,7 +1,8 @@
 ---
-import Layout from "../layouts/Layout.astro";
-import About from "../components/About.astro";
-import Work from "../components/Work.astro";
+import Layout from '../layouts/Layout.astro';
+import About from '../components/About.astro';
+import Work from '../components/Work.astro';
+import Contact from '../components/Contact.astro';
 ---
 
 <Layout title="Ian Wagner | Web Dev">
@@ -11,115 +12,150 @@ import Work from "../components/Work.astro";
     </div>
     <About />
     <Work />
-    <script is:inline>
-      const darkLightBtn = document.querySelector("#dark-light-toggle");
-      const html = document.querySelector("html");
-
-      darkLightBtn.addEventListener("click", function () {
-        html.dataset.theme = html.dataset.theme === "dark" ? "light" : "dark";
-        darkLightBtn.innerText =
-          darkLightBtn.innerText === "go light" ? "go dark" : "go light";
-      });
-    </script>
-    <script>
-      const emojis = [
-        "🤙",
-        "🧩",
-        "🥏",
-        "🎲",
-        "🎹",
-        "🎨",
-        "🎸",
-        "🎳",
-        "🏕️",
-        "🎻",
-        "👍",
-        "👎",
-        "💩",
-        "🤖",
-        "🧟",
-        "👻",
-        "🦊",
-        "🐻",
-        "🐶",
-        "🐱",
-        "🌞",
-        "🍤",
-        "🧊",
-        "🌊",
-        "🏞",
-        "🗻",
-        "🏔",
-        "🛸",
-        "🚀",
-        "🚲",
-        "🛴",
-        "🚗",
-        "🚕",
-        "🍩",
-        "🛳",
-        "⛵️",
-        "🚤",
-        "🏊",
-        "🚴",
-        "",
-        "🎮",
-        "🎥",
-        "🎧",
-        "📖",
-        "💻",
-        "💡",
-        "📱",
-        "🛍",
-        "💰",
-        "🎁",
-      ];
-
-      const randomEmoji = () =>
-        emojis[Math.floor(Math.random() * emojis.length)];
-
-      const replaceWordsWithEmoji = () => {
-        const elements = document.querySelectorAll("p, h2, h3");
-        elements.forEach((element) => {
-          const words = element.textContent.split(" ");
-          const replaced = words.map((word) => randomEmoji()).join(" ");
-          element.textContent = replaced;
-        });
-      };
-
-      const originalTexts = [];
-      const restoreText = () => {
-        const elements = document.querySelectorAll("p, h2, h3");
-        elements.forEach((element, index) => {
-          element.textContent = originalTexts[index];
-        });
-      };
-
-      let isReplaced = false;
-      const toggleReplace = () => {
-        if (isReplaced) {
-          restoreText();
-          isReplaced = false;
-        } else {
-          const elements = document.querySelectorAll("p, h2, h3");
-          elements.forEach((element) => {
-            originalTexts.push(element.textContent);
-          });
-          replaceWordsWithEmoji();
-          isReplaced = true;
-        }
-      };
-
-      const button = document.querySelector(".emoji-toggle");
-      button.addEventListener("click", toggleReplace);
-    </script>
+    <!-- <Contact /> -->
   </main>
+  <script is:inline>
+    const darkLightBtn = document.querySelector('#dark-light-toggle');
+    const html = document.querySelector('html');
+
+    darkLightBtn.addEventListener('click', function () {
+      html.dataset.theme = html.dataset.theme === 'light' ? 'dark' : 'light';
+      darkLightBtn.innerText = darkLightBtn.innerText === 'go dark' ? 'go light' : 'go dark';
+    });
+  </script>
+  <script>
+    const header = document.querySelector('.grid') as HTMLElement;
+    const headerOffsetTop = header.offsetTop;
+    let placeholder = null;
+    let scrolled = false;
+
+    window.addEventListener('scroll', () => {
+      scrolled = true;
+    });
+
+    function handleScroll() {
+      if (window.innerWidth > 761 && scrolled && window.pageYOffset >= headerOffsetTop) {
+        if (!placeholder) {
+          placeholder = document.createElement('div');
+          placeholder.style.height = `${header.offsetHeight}px`;
+          header.parentNode.insertBefore(placeholder, header);
+        }
+        header.classList.add('sticky');
+        header.style.top = `20px`;
+      } else {
+        if (placeholder) {
+          placeholder.remove();
+          placeholder = null;
+        }
+        header.classList.remove('sticky');
+        header.style.top = ``;
+      }
+    }
+
+    // Wait for the DOM to load before handling the scroll event
+    document.addEventListener('DOMContentLoaded', handleScroll);
+
+    // Add a scroll event listener to handle scrolling after the page has loaded
+    window.addEventListener('scroll', handleScroll);
+  </script>
+  <script>
+    const emojis = [
+      '🤙',
+      '🧩',
+      '🥏',
+      '🎲',
+      '🎹',
+      '🎨',
+      '🎸',
+      '🎳',
+      '🏕️',
+      '🎻',
+      '👍',
+      '👎',
+      '💩',
+      '🤖',
+      '🧟',
+      '👻',
+      '🦊',
+      '🐻',
+      '🐶',
+      '🐱',
+      '🌞',
+      '🍤',
+      '🧊',
+      '🌊',
+      '🏞',
+      '🗻',
+      '🏔',
+      '🛸',
+      '🚀',
+      '🚲',
+      '🛴',
+      '🚗',
+      '🚕',
+      '🍩',
+      '🛳',
+      '⛵️',
+      '🚤',
+      '🏊',
+      '🚴',
+      '',
+      '🎮',
+      '🎥',
+      '🎧',
+      '📖',
+      '💻',
+      '💡',
+      '📱',
+      '🛍',
+      '💰',
+      '🎁',
+    ];
+
+    const randomEmoji = () => emojis[Math.floor(Math.random() * emojis.length)];
+
+    const replaceWordsWithEmoji = () => {
+      const elements = document.querySelectorAll('p, h2, h3');
+      elements.forEach((element) => {
+        const words = element.textContent.split(' ');
+        const replaced = words.map((word) => randomEmoji()).join(' ');
+        element.textContent = replaced;
+      });
+    };
+
+    const originalTexts = [];
+    const restoreText = () => {
+      const elements = document.querySelectorAll('p, h2, h3');
+      elements.forEach((element, index) => {
+        element.textContent = originalTexts[index];
+      });
+    };
+
+    let isReplaced = false;
+    const toggleReplace = () => {
+      if (isReplaced) {
+        restoreText();
+        isReplaced = false;
+      } else {
+        const elements = document.querySelectorAll('p, h2, h3');
+        elements.forEach((element) => {
+          originalTexts.push(element.textContent);
+        });
+        replaceWordsWithEmoji();
+        isReplaced = true;
+      }
+    };
+
+    const button = document.querySelector('.emoji-toggle');
+    button.addEventListener('click', toggleReplace);
+  </script>
 </Layout>
 
 <style>
   .hero-subtitle {
     margin-top: 5%;
     margin-bottom: 20%;
+    position: relative;
   }
   .hero-subtitle h2 {
     font-size: clamp(1.8rem, -0.8333rem + 4.4444vw, 2.5rem);
