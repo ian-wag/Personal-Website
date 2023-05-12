@@ -24,25 +24,31 @@ import Logo from './Logo.astro';
     </div>
     <div class="header-links-2">
       <ul>
-        <li><a href="#about">About</a></li>
+        <li><a href="#about"><span class="links-hover">Work</span></a></li>
       </ul>
     </div>
     <div class="header-links-3">
       <ul>
-        <li><a href="#work">Work</a></li>
+        <li><a href="#work"><span class="links-hover">About</span></a></li>
       </ul>
     </div>
     <div class="header-links-4">
       <ul>
-        <li><a href="#">Contact</a></li>
+        <li><a href="#"><span class="links-hover">Contact</span></a></li>
       </ul>
     </div>
     <div class="header-links-5">
       <ul>
         <li>
-          <a href="https://www.linkedin.com/in/ian-wag/" target="_blank">Linkedin</a>
+          <a href="https://www.linkedin.com/in/ian-wag/" target="_blank"
+            ><span class="links-hover">Linkedin</span></a
+          >
         </li>
-        <li><a href="https://github.com/ian-wag" target="_blank">Github</a></li>
+        <li>
+          <a href="https://github.com/ian-wag" target="_blank"
+            ><span class="links-hover">Github</span></a
+          >
+        </li>
       </ul>
     </div>
   </nav>
@@ -81,7 +87,7 @@ import Logo from './Logo.astro';
     }
     .grid {
       display: grid;
-      grid-template-columns: repeat(8, 1fr);
+      grid-template-columns: repeat(10, 1fr);
       grid-template-rows: 1fr;
       grid-column-gap: 1rem;
       grid-row-gap: 0;
@@ -116,21 +122,24 @@ import Logo from './Logo.astro';
       grid-area: 1/1/2/3;
     }
     .header-links-2 {
-      grid-area: 1/3/1/4;
+      grid-area: 1/5/1/6;
+      margin-left: 4px;
     }
 
     .header-links-3 {
-      grid-area: 1/5/1/6;
+      grid-area: 1/6/1/7;
     }
     .header-links-4 {
-      grid-area: 1/7/1/8;
+      grid-area: 1/8/1/9;
+      margin-left: 4px;
     }
     .header-links-5 {
-      grid-area: 1/8/1/9;
+      grid-area: 1/10/1/10;
     }
 
-    .header-container a:hover {
-      background-color: rgb(0, 110, 255);
+    .header-container .links-hover:hover {
+      background: var(--primary-text);
+      color: var(--primary-background);
     }
   </style>
 </div>
