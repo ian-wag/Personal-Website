@@ -8,7 +8,11 @@ import Contact from '../components/Contact.astro';
 <Layout title="Ian Wagner | Web Dev">
   <main>
     <div class="hero-subtitle">
-      <h2>Innovative web design for a dynamic world</h2>
+      <h2>
+        Innovative <span class="title-accent">web</span> design for a dynamic <span
+          class="title-accent">world</span
+        >
+      </h2>
     </div>
     <About />
     <Work />
@@ -161,7 +165,13 @@ import Contact from '../components/Contact.astro';
     font-size: clamp(1.8rem, -0.8333rem + 4.4444vw, 2.5rem);
     text-transform: lowercase;
     text-align: end;
-    color: var(--body-text);
+    color: #8b8b8b;
+  }
+
+  .title-accent {
+    color: var(--primary-text);
+    font-weight: 700;
+    font-size: 4rem;
   }
 
   @media only screen and (max-width: 761px) {
