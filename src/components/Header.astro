@@ -18,35 +18,35 @@ import Logo from './Logo.astro';
   <nav class="sticky grid">
     <div class="header-links-1">
       <ul>
-        <li class="emoji-toggle"><span class="emoji-toggle-hover">Web Developer</span></li>
-        <li class="random-color">Chicago</li>
+        <li class="emoji-toggle"><span class="emoji-toggle-hover nav-item">Web Developer</span></li>
+        <li class="random-color nav-item">Chicago</li>
       </ul>
     </div>
     <div class="header-links-2">
       <ul>
-        <li><a href="#work"><span class="links-hover">Work</span></a></li>
+        <li><a href="#work"><span class="links-hover nav-item">Work</span></a></li>
       </ul>
     </div>
     <div class="header-links-3">
       <ul>
-        <li><a href="#about"><span class="links-hover">About</span></a></li>
+        <li><a href="#about"><span class="links-hover nav-item">About</span></a></li>
       </ul>
     </div>
     <div class="header-links-4">
       <ul>
-        <li><a href="#"><span class="links-hover">Contact</span></a></li>
+        <li><a href="#"><span class="links-hover nav-item">Contact</span></a></li>
       </ul>
     </div>
     <div class="header-links-5">
       <ul>
         <li>
           <a href="https://www.linkedin.com/in/ian-wag/" target="_blank"
-            ><span class="links-hover">Linkedin</span></a
+            ><span class="links-hover nav-item">Linkedin</span></a
           >
         </li>
         <li>
           <a href="https://github.com/ian-wag" target="_blank"
-            ><span class="links-hover">Github</span></a
+            ><span class="links-hover nav-item">Github</span></a
           >
         </li>
       </ul>
@@ -82,6 +82,10 @@ import Logo from './Logo.astro';
       user-select: none;
     }
 
+    .nav-item {
+      font-family: lft-etica-mono, sans-serif;
+    }
+
     li {
       text-transform: uppercase;
     }
@@ -95,15 +99,6 @@ import Logo from './Logo.astro';
       transform: translateY(-2.8vw);
       padding-left: 0;
     }
-
-    .noise {
-      width: 100%;
-      height: 100%;
-      position: absolute;
-      top: 0;
-      left: 0;
-    }
-
     @media only screen and (max-width: 761px) {
       .grid {
         display: block;
