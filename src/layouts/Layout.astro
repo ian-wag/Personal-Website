@@ -1,7 +1,7 @@
 ---
-import '@fontsource/plus-jakarta-sans';
+import "@fontsource/plus-jakarta-sans";
 
-import Header from '../components/Header.astro';
+import Header from "../components/Header.astro";
 export interface Props {
   title: string;
 }
@@ -81,7 +81,7 @@ const { title } = Astro.props;
   h4,
   h5,
   h6 {
-    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-family: "Plus Jakarta Sans", sans-serif;
     font-weight: bold;
     font-style: normal;
   }
@@ -91,25 +91,25 @@ const { title } = Astro.props;
   a,
   span {
     /* font-family: lft-etica-mono, sans-serif; */
-    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-family: "Plus Jakarta Sans", sans-serif;
     font-weight: 400;
     line-height: 1.4;
   }
 
   :root {
     --primary-text: #eeeeee;
-    --body-text: #c0c0c0;
+    --body-text: #ffffff;
     --primary-background: #0c0c0c;
     --easeInCubic: cubic-bezier(0.55, 0.055, 0.675, 0.19);
     --easeOutCubic: cubic-bezier(0.215, 0.61, 0.355, 1);
-    --bg-gradient-left: #00337c;
-    --bg-gradient-right: #00337c;
-    --bg-gradient-bottom: #00337c;
+    --bg-gradient-left: #212121;
+    --bg-gradient-right: #212121;
+    --bg-gradient-bottom: #212121;
     --neue-display: neue-haas-grotesk-display, sans-serif;
     --neue-text: neue-haas-grotesk-text, sans-serif;
   }
 
-  [data-theme='light'] {
+  [data-theme="light"] {
     --primary-text: #111111;
     --body-text: #303030;
     --primary-background: #eeeeee;
@@ -118,22 +118,30 @@ const { title } = Astro.props;
     --bg-gradient-bottom: #fd8a8a;
   }
 
-  [data-theme='dark'] {
+  [data-theme="dark"] {
     --primary-text: #eeeeee;
-    --body-text: #c0c0c0;
+    --body-text: #ffffff;
     --primary-background: #0c0c0c;
     --grey1: #353535;
     --grey2: #272727;
-    --bg-gradient-left: #012f6e;
-    --bg-gradient-right: #003a8b;
-    --bg-gradient-bottom: #001f4b;
+    --bg-gradient-left: #212121;
+    --bg-gradient-right: #212121;
+    --bg-gradient-bottom: #212121;
   }
 
   body {
     font-family: monospace, sans-serif;
-    background-image: radial-gradient(35vmax at 80vw 60vh, var(--bg-gradient-right), transparent),
+    background-image: radial-gradient(
+        35vmax at 80vw 60vh,
+        var(--bg-gradient-right),
+        transparent
+      ),
       radial-gradient(45vmax at 20vw 20vh, var(--bg-gradient-left), transparent),
-      radial-gradient(50vmax at 45vw calc(100vh + 20vmax), var(--bg-gradient-bottom), transparent);
+      radial-gradient(
+        50vmax at 45vw calc(100vh + 20vmax),
+        var(--bg-gradient-bottom),
+        transparent
+      );
     background-size: 100vw 200vh;
     background-attachment: fixed;
     background-color: var(--primary-background);
@@ -141,8 +149,8 @@ const { title } = Astro.props;
     transition: all 0.1s ease-in-out;
   }
   code {
-    font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
-      Bitstream Vera Sans Mono, Courier New, monospace;
+    font-family: Menlo, Monaco, Lucida Console, Liberation Mono,
+      DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace;
   }
 
   .body-container {
