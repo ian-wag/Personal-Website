@@ -1,8 +1,8 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import About from '../components/About.astro';
-import Work from '../components/Work.astro';
-import Contact from '../components/Contact.astro';
+import Layout from "../layouts/Layout.astro";
+import About from "../components/About.astro";
+import Work from "../components/Work.astro";
+import Contact from "../components/Contact.astro";
 ---
 
 <Layout title="Ian Wagner | Web Dev">
@@ -19,119 +19,124 @@ import Contact from '../components/Contact.astro';
     <!-- <Contact /> -->
   </main>
   <script is:inline>
-    const darkLightBtn = document.querySelector('#dark-light-toggle');
-    const html = document.querySelector('html');
+    const darkLightBtn = document.querySelector("#dark-light-toggle");
+    const html = document.querySelector("html");
 
-    darkLightBtn.addEventListener('click', function () {
-      html.dataset.theme = html.dataset.theme === 'light' ? 'dark' : 'light';
-      darkLightBtn.innerText = darkLightBtn.innerText === 'go dark' ? 'go light' : 'go dark';
+    darkLightBtn.addEventListener("click", function () {
+      html.dataset.theme = html.dataset.theme === "light" ? "dark" : "light";
+      darkLightBtn.innerText =
+        darkLightBtn.innerText === "go dark" ? "go light" : "go dark";
     });
   </script>
   <script>
-    const header = document.querySelector('.grid') as HTMLElement;
+    const header = document.querySelector(".grid") as HTMLElement;
     const headerOffsetTop = header.offsetTop;
     let placeholder = null;
     let scrolled = false;
 
-    window.addEventListener('scroll', () => {
+    window.addEventListener("scroll", () => {
       scrolled = true;
     });
 
     function handleScroll() {
-      if (window.innerWidth > 761 && scrolled && window.pageYOffset >= headerOffsetTop) {
+      if (
+        window.innerWidth > 761 &&
+        scrolled &&
+        window.pageYOffset >= headerOffsetTop
+      ) {
         if (!placeholder) {
-          placeholder = document.createElement('div');
+          placeholder = document.createElement("div");
           placeholder.style.height = `${header.offsetHeight}px`;
           header.parentNode.insertBefore(placeholder, header);
         }
-        header.classList.add('sticky');
+        header.classList.add("sticky");
         header.style.top = `20px`;
       } else {
         if (placeholder) {
           placeholder.remove();
           placeholder = null;
         }
-        header.classList.remove('sticky');
+        header.classList.remove("sticky");
         header.style.top = ``;
       }
     }
 
     // Wait for the DOM to load before handling the scroll event
-    document.addEventListener('DOMContentLoaded', handleScroll);
+    document.addEventListener("DOMContentLoaded", handleScroll);
 
     // Add a scroll event listener to handle scrolling after the page has loaded
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
   </script>
   <script>
     const emojis = [
-      '🤙',
-      '🧩',
-      '🥏',
-      '🎲',
-      '🎹',
-      '🎨',
-      '🎸',
-      '🎳',
-      '🏕️',
-      '🎻',
-      '👍',
-      '👎',
-      '💩',
-      '🤖',
-      '🧟',
-      '👻',
-      '🦊',
-      '🐻',
-      '🐶',
-      '🐱',
-      '🌞',
-      '🍤',
-      '🧊',
-      '🌊',
-      '🏞',
-      '🗻',
-      '🏔',
-      '🛸',
-      '🚀',
-      '🚲',
-      '🛴',
-      '🚗',
-      '🚕',
-      '🍩',
-      '🛳',
-      '⛵️',
-      '🚤',
-      '🏊',
-      '🚴',
-      '',
-      '🎮',
-      '🎥',
-      '🎧',
-      '📖',
-      '💻',
-      '💡',
-      '📱',
-      '🛍',
-      '💰',
-      '🎁',
+      "🤙",
+      "🧩",
+      "🥏",
+      "🎲",
+      "🎹",
+      "🎨",
+      "🎸",
+      "🎳",
+      "🏕️",
+      "🎻",
+      "👍",
+      "👎",
+      "💩",
+      "🤖",
+      "🧟",
+      "👻",
+      "🦊",
+      "🐻",
+      "🐶",
+      "🐱",
+      "🌞",
+      "🍤",
+      "🧊",
+      "🌊",
+      "🏞",
+      "🗻",
+      "🏔",
+      "🛸",
+      "🚀",
+      "🚲",
+      "🛴",
+      "🚗",
+      "🚕",
+      "🍩",
+      "🛳",
+      "⛵️",
+      "🚤",
+      "🏊",
+      "🚴",
+      "",
+      "🎮",
+      "🎥",
+      "🎧",
+      "📖",
+      "💻",
+      "💡",
+      "📱",
+      "🛍",
+      "💰",
+      "🎁",
     ];
 
     const randomEmoji = () => emojis[Math.floor(Math.random() * emojis.length)];
 
     const replaceWordsWithEmoji = () => {
-      const elements = document.querySelectorAll('p, h2, h3');
+      const elements = document.querySelectorAll("p, h2, h3");
       elements.forEach((element) => {
-        const words = element.textContent.split(' ');
-        const replaced = words.map((word) => randomEmoji()).join(' ');
+        const words = element.textContent.split(" ");
+        const replaced = words.map((word) => randomEmoji()).join(" ");
         element.textContent = replaced;
       });
     };
 
     const originalTexts = [];
     const restoreText = () => {
-      const elements = document.querySelectorAll('p, h2, h3');
+      const elements = document.querySelectorAll("p, h2, h3");
       elements.forEach((element, index) => {
-        element.textContent = originalTexts[index];
+        element.innerHTML = originalTexts[index];
       });
     };
 
@@ -141,17 +146,17 @@ import Contact from '../components/Contact.astro';
         restoreText();
         isReplaced = false;
       } else {
-        const elements = document.querySelectorAll('p, h2, h3');
+        const elements = document.querySelectorAll("p, h2, h3");
         elements.forEach((element) => {
-          originalTexts.push(element.textContent);
+          originalTexts.push(element.innerHTML);
         });
         replaceWordsWithEmoji();
         isReplaced = true;
       }
     };
 
-    const button = document.querySelector('.emoji-toggle');
-    button.addEventListener('click', toggleReplace);
+    const button = document.querySelector(".emoji-toggle");
+    button.addEventListener("click", toggleReplace);
   </script>
 </Layout>
 
@@ -171,7 +176,7 @@ import Contact from '../components/Contact.astro';
   .title-accent {
     color: var(--primary-text);
     font-weight: 700;
-    font-size: 4rem;
+    font-size: 6rem;
   }
 
   @media only screen and (max-width: 761px) {
