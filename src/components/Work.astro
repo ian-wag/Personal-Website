@@ -9,40 +9,42 @@ import Tandim from "../assets/Tandim.jpg";
 <section id="work">
   <div class="section-content">
     <h3 class="section-title">recent <span class="title-accent">work</span></h3>
-    <WorkCard
-      imgSrc={MyEquipmentSpecs}
-      title="MyEquipmentSpecs"
-      subtitle="Fecon description"
+    <div class="work-wrapper">
+      <WorkCard
+        imgSrc={MyEquipmentSpecs}
+        title="MES"
+        subtitle="Fecon description"
+        agency="Bartlett Idea Co."
+        tags="HTML | PHP | JS | WordPress"
+        projectHref="https://myequipmentspecs.com/"
+        agencyHref="https://bartlett.co/"
+      />
+      <WorkCard
+        imgSrc={IronCraft}
+        title="IronCraft"
+        subtitle="IronCraft description"
+        agency="Bartlett Idea Co."
+        tags="HTML | PHP | JS | WordPress"
+        projectHref="https://ironcraft.com/"
+        agencyHref="https://bartlett.co/"
+      />
+      <WorkCard
+        imgSrc={Tandim}
+        title="Tandim"
+        subtitle="Tandim description"
+        tags="HTML | PHP | JS | WordPress"
+        projectHref="https://tandimmusic.com/"
+      />
+      <WorkCard
+      imgSrc={PharmaMed}
+      title="PharmaMed"
+      subtitle="PharmaMed description"
       agency="Bartlett Idea Co."
       tags="HTML | PHP | JS | WordPress"
-      projectHref="https://myequipmentspecs.com/"
+      projectHref="https://pharmamed.com/"
       agencyHref="https://bartlett.co/"
-    />
-    <WorkCard
-      imgSrc={IronCraft}
-      title="IronCraft"
-      subtitle="IronCraft description"
-      agency="Bartlett Idea Co."
-      tags="HTML | PHP | JS | WordPress"
-      projectHref="https://ironcraft.com/"
-      agencyHref="https://bartlett.co/"
-    />
-    <WorkCard
-      imgSrc={Tandim}
-      title="Tandim"
-      subtitle="Tandim description"
-      tags="HTML | PHP | JS | WordPress"
-      projectHref="https://tandimmusic.com/"
-    />
-    <WorkCard
-    imgSrc={PharmaMed}
-    title="PharmaMed"
-    subtitle="PharmaMed description"
-    agency="Bartlett Idea Co."
-    tags="HTML | PHP | JS | WordPress"
-    projectHref="https://pharmamed.com/"
-    agencyHref="https://bartlett.co/"
-  />
+        />
+    </div>
   </div>
 </section>
 <style>
@@ -50,6 +52,7 @@ import Tandim from "../assets/Tandim.jpg";
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin: 0 auto;;
   }
 
   .section-content h3 {
@@ -59,6 +62,11 @@ import Tandim from "../assets/Tandim.jpg";
   .section-title {
     font-size: 4.5rem;
     color: #8b8b8b;
+  }
+
+  .work-wrapper {
+    width:90rem;  
+    max-width: 90%;
   }
 
   .title-accent {
