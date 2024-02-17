@@ -97,9 +97,9 @@ const { title } = Astro.props;
   }
 
   :root {
-    --primary-text: #eeeeee;
-    --body-text: #ffffff;
-    --primary-background: #0c0c0c;
+    --primary-text: #d9d9d9;
+    --body-text: #d9d9d9;
+    --primary-background: #141414;
     --easeInCubic: cubic-bezier(0.55, 0.055, 0.675, 0.19);
     --easeOutCubic: cubic-bezier(0.215, 0.61, 0.355, 1);
     --bg-gradient-left: #212121;
@@ -112,16 +112,16 @@ const { title } = Astro.props;
   [data-theme="light"] {
     --primary-text: #111111;
     --body-text: #303030;
-    --primary-background: #eeeeee;
+    --primary-background: #F8F8F8;
     --bg-gradient-left: #bdedff;
     --bg-gradient-right: #c2ffb4;
     --bg-gradient-bottom: #fd8a8a;
   }
 
   [data-theme="dark"] {
-    --primary-text: #eeeeee;
-    --body-text: #ffffff;
-    --primary-background: #0c0c0c;
+    --primary-text: #d9d9d9;
+    --body-text: #d9d9d9;
+    --primary-background: #141414;
     --grey1: #353535;
     --grey2: #272727;
     --bg-gradient-left: #212121;
@@ -131,7 +131,7 @@ const { title } = Astro.props;
 
   body {
     font-family: monospace, sans-serif;
-    background-image: radial-gradient(
+    /* background-image: radial-gradient(
         35vmax at 80vw 60vh,
         var(--bg-gradient-right),
         transparent
@@ -143,7 +143,7 @@ const { title } = Astro.props;
         transparent
       );
     background-size: 100vw 200vh;
-    background-attachment: fixed;
+    background-attachment: fixed; */
     background-color: var(--primary-background);
     color: var(--primary-text);
     transition: all 0.1s ease-in-out;
