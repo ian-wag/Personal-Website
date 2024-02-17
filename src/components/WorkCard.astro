@@ -9,7 +9,8 @@ export interface Props {
   agencyHref?: string;
 }
 
-const { imgSrc, title, subtitle, tags, projectHref, agencyHref, agency } = Astro.props;
+const { imgSrc, title, subtitle, tags, projectHref, agencyHref, agency } =
+  Astro.props;
 ---
 
 <!-- <div class="work-card-wrapper">
@@ -23,36 +24,32 @@ const { imgSrc, title, subtitle, tags, projectHref, agencyHref, agency } = Astro
     <p class="work-card-tags">{tags}</p>
   </div>
 </div> -->
-
 <div class="container">
-  <a
-    target="_blank"
-    title={projectHref}
-    href={projectHref}>
-  <div class="work-inner">
-    <div class="work-image">
-      <img width="980" height="553" src={imgSrc} alt={title} />
+  <a target="_blank" title={projectHref} href={projectHref}>
+    <div class="work-inner">
+      <div class="work-image">
+        <img width="980" height="553" src={imgSrc} alt={title} />
+      </div>
+      <div class="work-title"><h4>{title}</h4></div>
+      <div class="work-icon">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          version="1.1"
+          viewBox="0 0 32 32"
+          xml:space="preserve"
+          ><g
+            fill="none"
+            stroke=""
+            stroke-linejoin="round"
+            stroke-miterlimit="10"
+            stroke-width="2"
+          >
+            <path d="M15 1L31 1 31 17"> </path><path d="M31 1L1 31"> </path>
+          </g>
+        </svg>
+      </div>
     </div>
-    <div class="work-title"><h4>{title}</h4></div>
-    <div class="work-icon">
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        version="1.1"
-        viewBox="0 0 32 32"
-        xml:space="preserve"
-        ><g
-          fill="none"
-          stroke=""
-          stroke-linejoin="round"
-          stroke-miterlimit="10"
-          stroke-width="2"
-        >
-          <path d="M15 1L31 1 31 17"> </path><path d="M31 1L1 31"> </path>
-        </g>
-      </svg>
-    </div>
-  </div>
-</a>
+  </a>
 </div>
 
 <style>
@@ -91,7 +88,7 @@ const { imgSrc, title, subtitle, tags, projectHref, agencyHref, agency } = Astro
 
   .work-title {
     flex: 1 1;
-    font-size: 5rem;
+    font-size: clamp(3rem, 5vw, 5rem);
   }
 
   .work-icon {
@@ -104,5 +101,19 @@ const { imgSrc, title, subtitle, tags, projectHref, agencyHref, agency } = Astro
 
   .work-inner:hover .work-icon {
     opacity: 1;
+  }
+
+  @media (max-width: 900px) {
+    .work-inner:hover .work-image {
+      margin-left: -18rem;
+    }
+
+    .container {
+      padding: 0 1rem;
+    }
+
+    .work-icon {
+      width: 6vw;
+    }
   }
 </style>
