@@ -1,6 +1,6 @@
 ---
 import WorkCard from "./WorkCard.astro";
-import Fecon from "../assets/Fecon.jpg";
+import MyEquipmentSpecs from "../assets/MES.jpg";
 import IronCraft from "../assets/IronCraft.jpg";
 import PharmaMed from "../assets/PharmaMed.jpg";
 import Tandim from "../assets/Tandim.jpg";
@@ -9,46 +9,40 @@ import Tandim from "../assets/Tandim.jpg";
 <section id="work">
   <div class="section-content">
     <h3 class="section-title">recent <span class="title-accent">work</span></h3>
-    <div class="row">
-      <div class="column">
-        <WorkCard
-          imgSrc={Fecon}
-          title="Fecon"
-          subtitle="Fecon description"
-          agency="Bartlett Idea Co."
-          tags="HTML | PHP | JS | WordPress"
-          projectHref="https://fecon.com/"
-          agencyHref="https://bartlett.co/"
-        />
-        <WorkCard
-          imgSrc={PharmaMed}
-          title="PharmaMed"
-          subtitle="PharmaMed description"
-          agency="Bartlett Idea Co."
-          tags="HTML | PHP | JS | WordPress"
-          projectHref="https://pharmamed.com/"
-          agencyHref="https://bartlett.co/"
-        />
-      </div>
-      <div class="column">
-        <WorkCard
-          imgSrc={IronCraft}
-          title="IronCraft"
-          subtitle="IronCraft description"
-          agency="Bartlett Idea Co."
-          tags="HTML | PHP | JS | WordPress"
-          projectHref="https://ironcraft.com/"
-          agencyHref="https://bartlett.co/"
-        />
-        <WorkCard
-          imgSrc={Tandim}
-          title="Tandim"
-          subtitle="Tandim description"
-          tags="HTML | PHP | JS | WordPress"
-          projectHref="https://tandimmusic.com/"
-        />
-      </div>
-    </div>
+    <WorkCard
+      imgSrc={MyEquipmentSpecs}
+      title="MyEquipmentSpecs"
+      subtitle="Fecon description"
+      agency="Bartlett Idea Co."
+      tags="HTML | PHP | JS | WordPress"
+      projectHref="https://myequipmentspecs.com/"
+      agencyHref="https://bartlett.co/"
+    />
+    <WorkCard
+      imgSrc={IronCraft}
+      title="IronCraft"
+      subtitle="IronCraft description"
+      agency="Bartlett Idea Co."
+      tags="HTML | PHP | JS | WordPress"
+      projectHref="https://ironcraft.com/"
+      agencyHref="https://bartlett.co/"
+    />
+    <WorkCard
+      imgSrc={Tandim}
+      title="Tandim"
+      subtitle="Tandim description"
+      tags="HTML | PHP | JS | WordPress"
+      projectHref="https://tandimmusic.com/"
+    />
+    <WorkCard
+    imgSrc={PharmaMed}
+    title="PharmaMed"
+    subtitle="PharmaMed description"
+    agency="Bartlett Idea Co."
+    tags="HTML | PHP | JS | WordPress"
+    projectHref="https://pharmamed.com/"
+    agencyHref="https://bartlett.co/"
+  />
   </div>
 </section>
 <style>
@@ -71,15 +65,5 @@ import Tandim from "../assets/Tandim.jpg";
     color: var(--primary-text);
     font-weight: 700;
     font-size: 10rem;
-  }
-
-  .row {
-    display: flex;
-    justify-content: space-between;
-    max-width: 100%;
-  }
-
-  .column {
-    max-width: 46%;
   }
 </style>
