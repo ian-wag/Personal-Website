@@ -115,6 +115,7 @@
     font-size: clamp(1.5rem, 3vw, 2.5rem);
     color: var(--body-text);
     text-align: center;
+    opacity: .5;
   }
 
   textarea {
@@ -134,6 +135,7 @@
 
   textarea::placeholder {
     font-size: clamp(1.5rem,3vw,2.5rem);
+    opacity: .5;
   }
 
   button {
@@ -161,11 +163,13 @@
   button:focus {
     outline: none;
     border-bottom: 1px solid rgb(217, 217, 217, 1);
+    opacity: 1;
   }
 
   textarea:focus {
     outline: none;
     border: 1px solid rgb(217, 217, 217, 1);
+    opacity: 1;
   }
 
   input:focus::placeholder,
