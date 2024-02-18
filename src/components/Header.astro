@@ -1,5 +1,6 @@
 ---
 import Logo from "./Logo.astro";
+import Resume from "../assets/ian-resume-2024.pdf";
 ---
 
 <div class="header-container">
@@ -9,7 +10,8 @@ import Logo from "./Logo.astro";
         &copy;{new Date().getFullYear()}
       </p>
     </div>
-    <div><a class="header-email" href="mailto:hello@ianwag.com?subject=Mail from Our Site">hello@ianwag.com</a></div>
+    <div><a class="header-email" href="mailto:hello@ianwag.com">hello@ianwag.com</a></div>
+    <div><a href={Resume}>my resume</a></div>
     <div class="dark-light-toggle">
       <span id="dark-light-toggle">go light</span>
     </div>
@@ -127,7 +129,6 @@ import Logo from "./Logo.astro";
     }
     .header-links-2 {
       grid-area: 1/5/1/6;
-      margin-left: 0px;
     }
 
     .header-links-3 {
