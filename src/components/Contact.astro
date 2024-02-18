@@ -3,57 +3,162 @@
 
 <section id="contact">
   <div class="section-content">
-    <h3 class="section-title">contact</h3>
-    <!-- <form
-      action="/success"
-      class="contact__form grid"
-      enctype="application/x-www-form-urlencoded"
-      id="form-contact"
-      method="POST"
-      name="form-contact"
-    > -->
-    <form>
-      <input type="hidden" name="form-name" value="form-contact" />
-      <div class="contact__inputs grid">
-        <div class="contact__content">
-          <label for="name" class="contact__label">name</label>
-          <input id="name" name="name" type="text" class="contact__input" required="" />
-        </div>
-        <div class="contact__content">
-          <label for="form-email" class="contact__label">email</label>
-          <input
-            id="form-email"
-            name="form-email"
-            type="email"
-            class="contact__input"
-            required=""
-          />
-        </div>
-      </div>
-      <div class="contact__content">
-        <label for="form-message" class="contact__label">message</label>
-        <textarea
-          name="message"
-          id="form-message"
-          cols="0"
-          rows="8"
-          class="contact__input"
+    <h3 class="section-title">
+      <span class="title-accent emoji-replace">contact</span>
+      <span class="mobile-hide">info</span>
+    </h3>
+    <div class="info">
+      <h4>Ready to navigate the stars together?</h4>
+      <a href="mailto:hello@ianwag.com">hello@ianwag.com</a>
+      <p>Chicago, Illinois</p>
+    </div>
+    <h4 class="getintouch">or get in touch here:</h4>
+    <form method="post" action="" id="" class="">
+      <div class="contact-form">
+        Hello, fellow space traveler! My name orbits as
+        <input
+          type="text"
+          class=""
+          name="name"
+          id="contact-name"
+          placeholder="Enter your name"
           required=""
-          style="width: 410px; height: 165px;"
-          spellcheck="false"></textarea>
+        />
+        , transmit signals to my galactic mail at
+        <input
+          type="email"
+          class=""
+          name="email"
+          id="contact-email"
+          placeholder="youremail@yourdomain.com"
+          required=""
+        />
+        , and here's the essence of my transmission (message):
       </div>
-      <div class="contact__button">
-        <button class="button button--flex button--form" type="submit" form="form-contact">
-          Send Message <i class="uil uil-message button__icon"></i>
-        </button>
+      <textarea
+        class=""
+        id="textarea"
+        name="contact-msg"
+        placeholder="Type your interstellar query, idea, or discovery here..."
+      ></textarea>
+      <div class="arcade-contact__form_submit_wrap">
+        <button class="" id="" type="submit">Send message</button>
       </div>
     </form>
   </div>
 </section>
 <style>
+  .section-title {
+    font-size: 3.5rem;
+    color: #8b8b8b;
+  }
+
+  .title-accent {
+    color: var(--primary-text);
+    font-weight: 700;
+    font-size: 6rem;
+  }
+
   .section-content {
-    max-width: 50%;
+    font-size: clamp(2rem, 3vw, 3rem);
+    color: var(--body-text);
+    font-family: var(--neue-text);
+    line-height: 1.7;
+    padding-bottom: 20rem;
+  }
+
+  .info {
+    font-size: clamp(2.5rem, 3vw, 5rem);
+    margin-bottom: 7rem;
+  }
+
+  .info h4 {
+    font-size: clamp(1.5rem, 3vw, 3rem);
+    margin: 2rem 0;
+  }
+  .info a {
+    font-weight: 700;
+    transition: all 0.2s ease-in-out;
+  }
+
+  .info a:hover {
+    letter-spacing: 0.1rem;
+  }
+
+  .info p {
+    font-size: clamp(1.5rem, 3vw, 3rem);
+  }
+
+  .getintouch {
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    margin-bottom: 1rem;
+    color: var(--grey);
+  }
+
+  input {
+    font-size: clamp(1.5rem, 3vw, 3rem);
+    background-color: transparent;
+    color: var(--body-text);
+    font-family: var(--neue-text);
+    line-height: 1.7;
+    border: none;
+    border-bottom: 1px solid rgb(217, 217, 217, 0.5);
+    text-align: center;
+  }
+
+  input::placeholder {
+    font-size: clamp(1.5rem, 3vw, 2.5rem);
+    color: var(--body-text);
+    text-align: center;
+  }
+
+  textarea {
+    font-size: 3rem;
+    background-color: transparent;
+    color: var(--body-text);
+    font-family: var(--neue-text);
+    line-height: 1.7;
+    border: 1px solid rgb(217, 217, 217, 0.5);
     width: 100%;
-    margin-right: auto;
+    height: 20rem;
+    margin-top: 2rem;
+  }
+
+  textarea::placeholder {
+    font-size: clamp(2rem, 3vw, 2.5rem);
+  }
+
+  button {
+    font-size: 3rem;
+    background-color: var(--primary-background);
+    border: 1px solid var(--body-text);
+    color: var(--body-text);
+    font-family: var(--neue-text);
+    line-height: 1.7;
+    padding: 1rem 2rem;
+    margin-top: 2rem;
+    cursor: pointer;
+    opacity: .5;
+  }
+
+  button:hover {
+    opacity: 1;
+  }
+
+  input:focus,
+  select:focus,
+  button:focus {
+    outline: none;
+    border-bottom: 1px solid rgb(217, 217, 217, 1);
+  }
+
+  textarea:focus {
+    outline: none;
+    border: 1px solid rgb(217, 217, 217, 1);
+  }
+
+  input:focus::placeholder,
+  textarea:focus::placeholder {
+    opacity: 1;
   }
 </style>
