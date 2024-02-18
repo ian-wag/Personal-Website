@@ -16,7 +16,7 @@
     <form method="post" action="" id="" class="">
       <div class="contact-form">
         <span class="mobile-hide">Hello, fellow space traveler! My name orbits as</span>
-        <p class="mobile-show">My name is:</p>
+        <p class="mobile-show">Name:</p>
         <input
           type="text"
           class=""
@@ -26,18 +26,18 @@
           required=""
         />
         <span class="mobile-hide">, transmit signals to my galactic mail at</span>
-        <p class="mobile-show">My email is:</p>
+        <p class="mobile-show">Email:</p>
         <input
           type="email"
           class=""
           name="email"
           id="contact-email"
-          placeholder="youremail@yourdomain.com"
+          placeholder="Enter your email"
           required=""
         />
         <span class="mobile-hide">, and here's the essence of my transmission (message):</span>
       </div>
-      <p class="mobile-show">My message is:</p>
+      <p class="mobile-show">Message:</p>
       <textarea
         class=""
         id="textarea"
@@ -116,7 +116,7 @@
   }
 
   textarea {
-    font-size: 3rem;
+    font-size: clamp(1.5rem, 3vw, 2.5rem);
     background-color: transparent;
     color: var(--body-text);
     font-family: var(--neue-text);
@@ -129,7 +129,7 @@
   }
 
   textarea::placeholder {
-    font-size: clamp(2rem, 3vw, 2.5rem);
+    font-size: clamp(1.5rem,3vw,2.5rem);
   }
 
   button {
@@ -184,5 +184,7 @@
 
   button {
     font-size: 2rem;
+    display: block;
+    width: 100%;
   }
 </style>
