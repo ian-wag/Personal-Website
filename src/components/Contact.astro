@@ -15,7 +15,8 @@
     <h4 class="getintouch">or get in touch here:</h4>
     <form method="post" action="" id="" class="">
       <div class="contact-form">
-        Hello, fellow space traveler! My name orbits as
+        <span class="mobile-hide">Hello, fellow space traveler! My name orbits as</span>
+        <p class="mobile-show">My name is:</p>
         <input
           type="text"
           class=""
@@ -24,7 +25,8 @@
           placeholder="Enter your name"
           required=""
         />
-        , transmit signals to my galactic mail at
+        <span class="mobile-hide">, transmit signals to my galactic mail at</span>
+        <p class="mobile-show">My email is:</p>
         <input
           type="email"
           class=""
@@ -33,16 +35,17 @@
           placeholder="youremail@yourdomain.com"
           required=""
         />
-        , and here's the essence of my transmission (message):
+        <span class="mobile-hide">, and here's the essence of my transmission (message):</span>
       </div>
+      <p class="mobile-show">My message is:</p>
       <textarea
         class=""
         id="textarea"
         name="contact-msg"
         placeholder="Type your interstellar query, idea, or discovery here..."
       ></textarea>
-      <div class="arcade-contact__form_submit_wrap">
-        <button class="" id="" type="submit">Send message</button>
+      <div class="">
+        <button>send message</button>
       </div>
     </form>
   </div>
@@ -64,10 +67,11 @@
     color: var(--body-text);
     font-family: var(--neue-text);
     line-height: 1.7;
+    padding-bottom: 1.5rem;
   }
 
   .info {
-    font-size: clamp(2.5rem, 3vw, 5rem);
+    font-size: clamp(2rem, 3vw, 5rem);
     margin-bottom: 7rem;
   }
 
@@ -134,7 +138,8 @@
     border: 1px solid var(--body-text);
     color: var(--body-text);
     font-family: var(--neue-text);
-    line-height: 1.7;
+    font-weight: 400;
+    line-height: 1;
     padding: 1rem 2rem;
     margin-top: 2rem;
     cursor: pointer;
@@ -160,5 +165,24 @@
   input:focus::placeholder,
   textarea:focus::placeholder {
     opacity: 1;
+  }
+
+  .mobile-show {
+    padding-top: 2rem;
+    padding-bottom: 1rem;
+  }
+
+  @media only screen and (max-width: 761px) {
+
+  .title-accent {
+    font-size: 4rem;
+  }
+
+  input::placeholder {
+    text-align: left;
+  }
+
+  button {
+    font-size: 2rem;
   }
 </style>
