@@ -13,24 +13,17 @@ const { imgSrc, title, subtitle, tags, projectHref, agencyHref, agency } =
   Astro.props;
 ---
 
-<!-- <div class="work-card-wrapper">
-  <a class="work-card" href={projectHref} target="_blank">
-    <img class="work-card-img grayscale" src={imgSrc} alt={title} />
-  </a>
-  <div class="work-card-body">
-    <a href={projectHref} target="_blank"><h3 class="work-card-title">{title}</h3></a>
-    <a href={agencyHref} target="_blank"><h5 class="work-card-title">{agency}</h5></a>
-    <h4 class="card-subtitle">{subtitle}</h4>
-    <p class="work-card-tags">{tags}</p>
-  </div>
-</div> -->
 <div class="container">
   <a target="_blank" title={projectHref} href={projectHref}>
     <div class="work-inner">
       <div class="work-image">
         <img width="980" height="553" src={imgSrc} alt={title} />
       </div>
-      <div class="work-title"><h4>{title}</h4></div>
+      <div class="work-title-wrap">
+        <h4 class="emoji-replace">{title}</h4>
+        <p class="work-subtitle">{agency}</p>
+        <p class="work-tags">{tags}</p>
+      </div>
       <div class="work-icon">
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -73,22 +66,32 @@ const { imgSrc, title, subtitle, tags, projectHref, agencyHref, agency } =
     width: 18rem;
     overflow: hidden;
     margin-left: -18rem;
-    transition: margin 0.6s cubic-bezier(0.215, 0.61, 0.355, 1);
+    transition: margin 0.7s var(--easeOutCubic);
   }
 
   .work-image img {
     width: 15rem;
     height: auto;
-    border-radius: 0.5rem;
+    border-radius: 0.6rem;
   }
 
   .work-inner:hover .work-image {
     margin-left: 0;
   }
 
-  .work-title {
+  .work-title-wrap {
     flex: 1 1;
     font-size: clamp(3rem, 5vw, 5rem);
+  }
+
+  .work-subtitle {
+    font-size: 1rem;
+    color: var(--primary-text);
+  }
+
+  .work-tags {
+    font-size: 1rem;
+    color: var(--grey);
   }
 
   .work-icon {

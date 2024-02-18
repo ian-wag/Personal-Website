@@ -9,8 +9,8 @@ import Contact from "../components/Contact.astro";
   <main>
     <div class="hero-subtitle">
       <h2>
-        Innovative <span class="title-accent">web</span> design for a dynamic <span
-          class="title-accent">world</span
+        Innovative <span class="title-accent emoji-replace">web</span> design for a dynamic <span
+          class="title-accent emoji-replace">world</span
         >
       </h2>
     </div>
@@ -124,7 +124,7 @@ import Contact from "../components/Contact.astro";
     const randomEmoji = () => emojis[Math.floor(Math.random() * emojis.length)];
 
     const replaceWordsWithEmoji = () => {
-      const elements = document.querySelectorAll("p, h2, h3");
+      const elements = document.querySelectorAll(".emoji-replace");
       elements.forEach((element) => {
         const words = element.textContent.split(" ");
         const replaced = words.map((word) => randomEmoji()).join(" ");
@@ -134,7 +134,7 @@ import Contact from "../components/Contact.astro";
 
     const originalTexts = [];
     const restoreText = () => {
-      const elements = document.querySelectorAll("p, h2, h3");
+      const elements = document.querySelectorAll(".emoji-replace");
       elements.forEach((element, index) => {
         element.innerHTML = originalTexts[index];
       });
@@ -146,7 +146,7 @@ import Contact from "../components/Contact.astro";
         restoreText();
         isReplaced = false;
       } else {
-        const elements = document.querySelectorAll("p, h2, h3");
+        const elements = document.querySelectorAll(".emoji-replace");
         elements.forEach((element) => {
           originalTexts.push(element.innerHTML);
         });
