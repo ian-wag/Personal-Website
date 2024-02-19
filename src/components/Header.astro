@@ -10,7 +10,12 @@ import Resume from "../assets/ian-resume-2024.pdf";
         &copy;{new Date().getFullYear()}
       </p>
     </div>
-    <div><a class="header-email mobile-hide" href="mailto:hello@ianwag.com">hello@ianwag.com</a><a class="header-email mobile-show" href="mailto:hi@ianwag.com">hi@ianwag.com</a></div>
+    <div>
+      <a class="header-email mobile-hide" href="mailto:hello@ianwag.com"
+        >hello@ianwag.com</a
+      ><a class="header-email mobile-show" href="mailto:hi@ianwag.com"
+        >hi@ianwag.com</a>
+    </div>
     <div><a class="header-resume" href={Resume}>resume</a></div>
     <div class="dark-light-toggle">
       <span id="dark-light-toggle">go light</span>
@@ -30,21 +35,27 @@ import Resume from "../assets/ian-resume-2024.pdf";
     <div class="header-links-2">
       <ul>
         <li>
-          <a href="#work"><span class="links-hover nav-item emoji-replace">Work</span></a>
+          <a href="#work"
+            ><span class="links-hover nav-item emoji-replace">Work</span></a
+          >
         </li>
       </ul>
     </div>
     <div class="header-links-3">
       <ul>
         <li>
-          <a href="#about"><span class="links-hover nav-item emoji-replace">About</span></a>
+          <a href="#about"
+            ><span class="links-hover nav-item emoji-replace">About</span></a
+          >
         </li>
       </ul>
     </div>
     <div class="header-links-4">
       <ul>
         <li>
-          <a href="#contact"><span class="links-hover nav-item emoji-replace">Contact</span></a>
+          <a href="#contact"
+            ><span class="links-hover nav-item emoji-replace">Contact</span></a
+          >
         </li>
       </ul>
     </div>
@@ -80,10 +91,12 @@ import Resume from "../assets/ian-resume-2024.pdf";
       background: var(--primary-text);
       color: var(--primary-background);
     }
-  .header-email, .header-resume {
-    transition: none;
+    .header-email,
+    .header-resume {
+      transition: none;
     }
-    .header-email:hover, .header-resume:hover {
+    .header-email:hover,
+    .header-resume:hover {
       background: var(--primary-text);
       color: var(--primary-background);
     }
@@ -101,9 +114,9 @@ import Resume from "../assets/ian-resume-2024.pdf";
     }
 
     .dark-light-toggle span:hover {
-    background: var(--primary-text);
-    color: var(--primary-background);
-  }
+      background: var(--primary-text);
+      color: var(--primary-background);
+    }
 
     .nav-item {
       font-family: lft-etica-mono, sans-serif;

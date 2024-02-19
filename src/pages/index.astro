@@ -9,15 +9,20 @@ import Contact from "../components/Contact.astro";
   <main>
     <div class="hero-subtitle">
       <h2>
-        Innovative <span class="title-accent emoji-replace">web</span> design for a dynamic <span
-          class="title-accent emoji-replace">world</span
-        >
+        <span class="mobile-hide">Innovative</span><span class="title-accent emoji-replace">web</span> design for
+        a dynamic <span class="title-accent emoji-replace">world</span>
       </h2>
     </div>
     <About />
     <Work />
     <Contact />
   </main>
+  <script>
+    console.log(
+      "%c✨ built by ian 🚀",
+      "color:#1cce69; background: #141414; font-size: 3.5rem; padding: 0.15rem 0.25rem; margin: 1rem; font-family: Helvetica; border: 2px solid #1cce69; border-radius: 4px; font-weight: bold; text-shadow: 1px 1px 1px #0a0121; font-style: italic; "
+    );
+  </script>
   <script is:inline>
     const darkLightBtn = document.querySelector("#dark-light-toggle");
     const html = document.querySelector("html");
@@ -167,10 +172,11 @@ import Contact from "../components/Contact.astro";
     position: relative;
   }
   .hero-subtitle h2 {
-    font-size: clamp(1.8rem, -0.8333rem + 4.4444vw, 2.5rem);
+    font-size: clamp(1.8rem, 3vw, 2.5rem);
     text-transform: lowercase;
     text-align: end;
-    color: #8b8b8b;
+    color: var(--grey);
+    text-wrap: balance;
   }
 
   .title-accent {
@@ -186,7 +192,7 @@ import Contact from "../components/Contact.astro";
     }
 
     .title-accent {
-    font-size: 3rem;
-  }
+      font-size: 3rem;
+    }
   }
 </style>

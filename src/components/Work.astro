@@ -8,7 +8,10 @@ import Tandim from "../assets/Tandim.jpg";
 
 <section id="work">
   <div class="section-content">
-    <h3 class="section-title"><span class="mobile-hide">recent</span> <span class="title-accent emoji-replace">work</span></h3>
+    <h3 class="section-title">
+      <span class="mobile-hide">recent</span>
+      <span class="title-accent emoji-replace">work</span>
+    </h3>
     <div class="work-wrapper">
       <WorkCard
         imgSrc={MyEquipmentSpecs}
@@ -37,14 +40,14 @@ import Tandim from "../assets/Tandim.jpg";
         projectHref="https://tandimmusic.com/"
       />
       <WorkCard
-      imgSrc={PharmaMed}
-      title="PharmaMed"
-      subtitle="PharmaMed description"
-      agency="Bartlett Idea Co."
-      tags="PHP | JS | WordPress"
-      projectHref="https://pharmamedinc.com/"
-      agencyHref="https://bartlett.co/"
-        />
+        imgSrc={PharmaMed}
+        title="PharmaMed"
+        subtitle="PharmaMed description"
+        agency="Bartlett Idea Co."
+        tags="PHP | JS | WordPress"
+        projectHref="https://pharmamedinc.com/"
+        agencyHref="https://bartlett.co/"
+      />
     </div>
   </div>
 </section>
@@ -53,7 +56,7 @@ import Tandim from "../assets/Tandim.jpg";
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 0 auto;;
+    margin: 0 auto;
   }
 
   .section-content h3 {
@@ -66,7 +69,7 @@ import Tandim from "../assets/Tandim.jpg";
   }
 
   .work-wrapper {
-    width:90rem;  
+    width: 90rem;
     max-width: 100%;
   }
 
@@ -77,9 +80,8 @@ import Tandim from "../assets/Tandim.jpg";
   }
 
   @media only screen and (max-width: 761px) {
-
-.title-accent {
-  font-size: 4rem;
-}
-}
+    .title-accent {
+      font-size: 4rem;
+    }
+  }
 </style>

@@ -9,13 +9,17 @@
     </h3>
     <div class="info">
       <h4>Ready to navigate the stars together?</h4>
+      <span class="email-location-label">email:</span>
       <a href="mailto:hello@ianwag.com">hello@ianwag.com</a>
+      <span class="email-location-label">location:</span>
       <p>Chicago, Illinois</p>
     </div>
     <h4 class="getintouch">or get in touch here:</h4>
     <form method="post" action="" id="" class="">
       <div class="contact-form">
-        <span class="mobile-hide">Hello, fellow space traveler! My name orbits as</span>
+        <span class="mobile-hide"
+          >Hello, fellow space traveler! My name orbits as</span
+        >
         <p class="mobile-show">Name:</p>
         <input
           type="text"
@@ -25,7 +29,9 @@
           placeholder="Enter your name"
           required=""
         />
-        <span class="mobile-hide">, transmit signals to my galactic mail at</span>
+        <span class="mobile-hide"
+          >, transmit signals to my galactic mail at</span
+        >
         <p class="mobile-show">Email:</p>
         <input
           type="email"
@@ -35,7 +41,9 @@
           placeholder="Enter your email"
           required=""
         />
-        <span class="mobile-hide">, and here's the essence of my transmission (message):</span>
+        <span class="mobile-hide"
+          >, and here's the essence of my transmission (message):</span
+        >
       </div>
       <p class="mobile-show">Message:</p>
       <textarea
@@ -93,6 +101,16 @@
     font-size: clamp(1.5rem, 3vw, 3rem);
   }
 
+  .email-location-label {
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    color: var(--grey);
+    display: block;
+  }
+
+  .info span:first-of-type {
+    margin-bottom: -10px;
+  }
+
   .getintouch {
     font-size: clamp(1.5rem, 3vw, 2rem);
     color: var(--grey);
@@ -115,7 +133,7 @@
     font-size: clamp(1.5rem, 3vw, 2.5rem);
     color: var(--body-text);
     text-align: center;
-    opacity: .5;
+    opacity: 0.5;
   }
 
   textarea {
@@ -134,8 +152,8 @@
   }
 
   textarea::placeholder {
-    font-size: clamp(1.5rem,3vw,2.5rem);
-    opacity: .5;
+    font-size: clamp(1.5rem, 3vw, 2.5rem);
+    opacity: 0.5;
   }
 
   button {
@@ -149,7 +167,7 @@
     padding: 1rem 2rem;
     margin-top: 2rem;
     cursor: pointer;
-    opacity: .5;
+    opacity: 0.5;
     border-radius: 0;
     -webkit-appearance: none;
   }
@@ -179,30 +197,36 @@
 
   .mobile-show {
     padding-top: 1rem;
-    padding-bottom: .5rem;
+    padding-bottom: 0.5rem;
   }
 
   @media only screen and (max-width: 761px) {
+    .title-accent {
+      font-size: 4rem;
+    }
 
-  .title-accent {
-    font-size: 4rem;
+    input {
+      text-align: left;
+    }
+
+    input::placeholder {
+      text-align: left;
+    }
+
+    button {
+      font-size: 2rem;
+      display: block;
+      width: 100%;
+    }
+
+    button {
+      opacity: 1;
+    }
   }
 
-  input {
-    text-align: left;
-  }
-
-  input::placeholder {
-    text-align: left;
-  }
-
-  button {
-    font-size: 2rem;
-    display: block;
-    width: 100%;
-  }
-
-  button {
-    opacity: 1;
+  @media screen and (max-width: 1100px) {
+    .info span:first-of-type {
+      margin-bottom: -5px;
+    }
   }
 </style>
