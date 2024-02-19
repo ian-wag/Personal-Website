@@ -55,46 +55,45 @@
       ></textarea>
       <div>
         <button type="submit">send message</button>
-        <span
-          id="form-success-message"
-          style="display:none; color: green; margin-left: 10px;"
-          >Submitted!</span
-        >
+        <div id="form-success-message" style="display: none;">Thank you for your message!</div>
+        <div id="form-error-message" style="display: none;">Submission failed, please try again.</div>
+        
       </div>
     </form>
   </div>
 </section>
 <script>
-  document
-    .getElementById("contact-form")
-    .addEventListener("submit", function (e) {
-      e.preventDefault();
-      const form = e.target;
-      const data = new FormData(form as HTMLFormElement);
+  document.getElementById("contact-form").addEventListener("submit", function (e) {
+    e.preventDefault(); // Prevent the default form submission
+    const form = e.target;
+    const data = new FormData(form as HTMLFormElement);
 
-      fetch("/", {
-        method: "POST",
-        body: data,
-        headers: {
-          Accept: "application/x-www-form-urlencoded;charset=UTF-8",
-          "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8",
-        },
-      })
-        .then((response) => {
-          if (response.ok) {
-            // Show the success message
-            document.getElementById("form-success-message").style.display =
-              "inline";
-            const formElement = form as HTMLFormElement;
-            formElement.reset();
-          } else {
-            // Handle submission error
-            console.error("Form submission failed");
-          }
-        })
-        .catch((error) => console.error("Error:", error));
+    fetch("/", {
+      method: "POST",
+      body: data,
+      headers: {
+        "Accept": "application/json",
+      },
+    })
+    .then(response => {
+      if (response.ok) {
+        // Show the success message
+        document.getElementById("form-success-message").style.display = "block";
+        (form as HTMLFormElement).reset(); // Reset the form fields
+      } else {
+        // Handle the error state
+        document.getElementById("form-error-message").style.display = "block";
+        console.error("Form submission failed");
+      }
+    })
+    .catch(error => {
+      // Handle any errors that occurred during the fetch
+      document.getElementById("form-error-message").style.display = "block";
+      console.error("Error:", error);
     });
+  });
 </script>
+
 <style>
   .section-title {
     font-size: 3.5rem;
