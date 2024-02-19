@@ -54,9 +54,9 @@
         placeholder="type your interstellar query, idea, or discovery here..."
       ></textarea>
       <div>
+        <div id="form-error-message" style="display: none;">❌ Submission failed, please try again.</div>
         <button type="submit">send message</button>
-        <div id="form-success-message" style="display: none;">Thank you for your message!</div>
-        <div id="form-error-message" style="display: none;">Submission failed, please try again.</div>
+        <div id="form-success-message" style="display: flex;">💫 transmission recieved 🚀</div>
         
       </div>
     </form>
@@ -64,7 +64,7 @@
 </section>
 <script>
   document.getElementById("contact-form").addEventListener("submit", function (e) {
-    e.preventDefault(); // Prevent the default form submission
+    e.preventDefault();
     const form = e.target;
     const data = new FormData(form as HTMLFormElement);
 
@@ -77,17 +77,19 @@
     })
     .then(response => {
       if (response.ok) {
-        // Show the success message
-        document.getElementById("form-success-message").style.display = "block";
-        (form as HTMLFormElement).reset(); // Reset the form fields
+        const formHeight = (form as HTMLFormElement).offsetHeight;
+
+
+        document.getElementById("contact-form").style.display = "none";
+        const successMessage = document.getElementById("form-success-message");
+        successMessage.style.height = formHeight + 'px';
+        successMessage.style.display = "block";
       } else {
-        // Handle the error state
         document.getElementById("form-error-message").style.display = "block";
         console.error("Form submission failed");
       }
     })
     .catch(error => {
-      // Handle any errors that occurred during the fetch
       document.getElementById("form-error-message").style.display = "block";
       console.error("Error:", error);
     });
@@ -237,6 +239,15 @@
     padding-bottom: 0.5rem;
   }
 
+  #form-success-message {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: clamp(1.5rem, 3vw, 2.5rem);
+    color: #1bcb5e;
+  }
+
+
   @media only screen and (max-width: 761px) {
     .title-accent {
       font-size: 4rem;
@@ -260,7 +271,6 @@
       opacity: 1;
     }
   }
-
   @media screen and (max-width: 1100px) {
     .info span:first-of-type {
       margin-bottom: -5px;
