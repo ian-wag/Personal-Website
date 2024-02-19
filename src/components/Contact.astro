@@ -56,7 +56,7 @@
       <div>
         <div id="form-error-message" style="display: none;">❌ Submission failed, please try again.</div>
         <button type="submit">send message</button>
-        <div id="form-success-message" style="display: flex;">💫 transmission recieved 🚀</div>
+        <div id="form-success-message" style="display: none;">💫 transmission recieved 🚀</div>
         
       </div>
     </form>
@@ -83,7 +83,7 @@
         document.getElementById("contact-form").style.display = "none";
         const successMessage = document.getElementById("form-success-message");
         successMessage.style.height = formHeight + 'px';
-        successMessage.style.display = "block";
+        successMessage.style.display = "flex";
       } else {
         document.getElementById("form-error-message").style.display = "block";
         console.error("Form submission failed");
@@ -212,7 +212,7 @@
   }
 
   button:hover {
-    opacity: 1;
+    opacity: 1; 
   }
 
   input:focus,
@@ -240,7 +240,6 @@
   }
 
   #form-success-message {
-    display: flex;
     justify-content: center;
     align-items: center;
     font-size: clamp(1.5rem, 3vw, 2.5rem);
