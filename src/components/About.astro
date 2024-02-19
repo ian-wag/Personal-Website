@@ -1,7 +1,9 @@
 <section id="about" class="about">
   <div class="section-content">
     <h3 class="section-title"><span class="title-accent emoji-replace">about</span> <span class="mobile-hide">me</span></h3>
-    <p>Greetings! I blur the lines of creativity and tech to produce captivating and interactive websites. My background in hospitality prepares me for fast-paced and demanding work environments, where I excel at juggling tasks and collaborating with team members to bridge the client-consumer divide. On my days off, you can find me exploring new coffee joints in Logan Square or taking a scenic bike ride along the 606 trail.</p>
+    <p class="scroll-reveal-effect mobile-hide">Greetings! I blur the lines of creativity and tech to produce captivating and interactive websites. My background in hospitality prepares me for fast-paced and demanding work environments, where I excel at juggling tasks and collaborating with team members to bridge the client-consumer divide. On my days off, you can find me exploring new coffee joints in Logan Square or taking a scenic bike ride along the 606 trail.</p>
+    <p class="mobile-show">Greetings! I blur the lines of creativity and tech to produce captivating and interactive websites. My background in hospitality prepares me for fast-paced and demanding work environments, where I excel at juggling tasks and collaborating with team members to bridge the client-consumer divide. On my days off, you can find me exploring new coffee joints in Logan Square or taking a scenic bike ride along the 606 trail.</p>
+
   </div>
 </section>
 
@@ -56,12 +58,14 @@
 }
 
 .section-content p {
-  font-size: 2rem;
+  font-size: 1.8rem;
+  padding-top: 2rem;
+  line-height: 1.7;
 }
 </style>
 <script>
 document.addEventListener("DOMContentLoaded", () => {
-  const textWrapper = document.querySelector("#about .section-content p");
+  const textWrapper = document.querySelector(".scroll-reveal-effect");
 
   if (textWrapper) {
     textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
