@@ -1,8 +1,10 @@
 <section id="about" class="about">
   <div class="section-content">
     <h3 class="section-title"><span class="title-accent emoji-replace">about</span> <span class="mobile-hide">me</span></h3>
-    <p class="scroll-reveal-effect mobile-hide">Greetings! I blur the lines of creativity and tech to produce captivating and interactive websites. My background in hospitality prepares me for fast-paced and demanding work environments, where I excel at juggling tasks and collaborating with team members to bridge the client-consumer divide. On my days off, you can find me exploring new coffee joints in Logan Square or taking a scenic bike ride along the 606 trail.</p>
-    <p class="mobile-show">Greetings! I blur the lines of creativity and tech to produce captivating and interactive websites. My background in hospitality prepares me for fast-paced and demanding work environments, where I excel at juggling tasks and collaborating with team members to bridge the client-consumer divide. On my days off, you can find me exploring new coffee joints in Logan Square or taking a scenic bike ride along the 606 trail.</p>
+    <p class="scroll-reveal-effect mobile-hide">Greetings! I'm a web developer passionate about merging creativity with technology to craft stunning, interactive online experiences. My journey from the hospitality industry to web development has equipped me with a unique blend of skills, allowing me to manage multiple projects efficiently while fostering outstanding teamwork and client relationships. This background has been instrumental in my approach to web development, pushing me to innovate and consistently exceed expectations. 
+      
+In my current role, I specialize in creating dynamic websites and applications using WordPress, JavaScript, and PHP. When I'm not working, I'm on a quest for the ultimate cup of coffee, getting lost in a great book, or aspiring to reach my grandma's skill level in crossword puzzles. If you're interested in having a conversation or just want to share your favorite book, reach out. Let's connect!</p>
+    <p class="mobile-show">Greetings! I'm a web developer blending creativity with tech to create engaging web experiences. Transitioning from hospitality to web development, I've gained unique skills in project management, teamwork, and client relations. I work with WordPress, JavaScript, and PHP to build dynamic websites and apps. When I'm not working,  I'm on a quest for the ultimate cup of coffee, getting lost in a great book, or aspiring to reach my grandma's skill level in crossword puzzles. If you're interested in having a conversation or just want to share your favorite book, reach out. Let's connect!</p>
 
   </div>
 </section>
@@ -61,6 +63,8 @@
   font-size: 1.8rem;
   padding-top: 2rem;
   line-height: 1.7;
+  letter-spacing: 1px;
+}
 }
 </style>
 <script>
@@ -74,7 +78,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const adjustOpacity = () => {
       const factor = 3.7; // Controls the speed of the scroll effect
-      const offset = 300; // Controls when the scroll effect starts
+      const offset = 350; // Controls when the scroll effect starts
       const scrollProgress = factor * (document.documentElement.scrollTop - offset);
       const scrolled = scrollProgress / (document.documentElement.scrollHeight - document.documentElement.clientHeight) * letters.length;
       const fadeRange = 50; // Number of letters over which the opacity will transition
