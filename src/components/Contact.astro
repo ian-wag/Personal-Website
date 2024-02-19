@@ -16,7 +16,7 @@
       <p>Chicago, Illinois</p>
     </div>
     <h4 class="getintouch">or get in touch here:</h4>
-    <form method="post" action="" id="" class="">
+    <form name="contact" method="POST" data-netlify="true" id="contact-form">
       <div class="contact-form">
         <span class="mobile-hide"
           >Hello, fellow space traveler! My name orbits as</span
@@ -53,12 +53,48 @@
         name="contact-msg"
         placeholder="type your interstellar query, idea, or discovery here..."
       ></textarea>
-      <div class="">
-        <button>send message</button>
+      <div>
+        <button type="submit">send message</button>
+        <span
+          id="form-success-message"
+          style="display:none; color: green; margin-left: 10px;"
+          >Submitted!</span
+        >
       </div>
     </form>
   </div>
 </section>
+<script>
+  document
+    .getElementById("contact-form")
+    .addEventListener("submit", function (e) {
+      e.preventDefault();
+      const form = e.target;
+      const data = new FormData(form as HTMLFormElement);
+
+      fetch("/", {
+        method: "POST",
+        body: data,
+        headers: {
+          Accept: "application/x-www-form-urlencoded;charset=UTF-8",
+          "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8",
+        },
+      })
+        .then((response) => {
+          if (response.ok) {
+            // Show the success message
+            document.getElementById("form-success-message").style.display =
+              "inline";
+            const formElement = form as HTMLFormElement;
+            formElement.reset();
+          } else {
+            // Handle submission error
+            console.error("Form submission failed");
+          }
+        })
+        .catch((error) => console.error("Error:", error));
+    });
+</script>
 <style>
   .section-title {
     font-size: 3.5rem;
