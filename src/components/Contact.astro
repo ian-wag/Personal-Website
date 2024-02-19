@@ -10,7 +10,8 @@
     <div class="info">
       <h4>Ready to navigate the stars together?</h4>
       <span class="email-location-label">email:</span>
-      <a href="mailto:hello@ianwag.com">hello@ianwag.com</a>
+      <a class="mobile-hide" href="mailto:hello@ianwag.com">hello@ianwag.com</a>
+      <a class="mobile-show" href="mailto:hi@ianwag.com">hi@ianwag.com</a>
       <span class="email-location-label">location:</span>
       <p>Chicago, Illinois</p>
     </div>
@@ -26,7 +27,7 @@
           class=""
           name="name"
           id="contact-name"
-          placeholder="Enter your name"
+          placeholder="enter your name"
           required=""
         />
         <span class="mobile-hide"
@@ -38,7 +39,7 @@
           class=""
           name="email"
           id="contact-email"
-          placeholder="Enter your email"
+          placeholder="enter your email"
           required=""
         />
         <span class="mobile-hide"
@@ -50,7 +51,7 @@
         class=""
         id="textarea"
         name="contact-msg"
-        placeholder="Type your interstellar query, idea, or discovery here..."
+        placeholder="type your interstellar query, idea, or discovery here..."
       ></textarea>
       <div class="">
         <button>send message</button>
@@ -127,6 +128,7 @@
     text-align: center;
     border-radius: 0;
     -webkit-appearance: none;
+    max-width: 21rem;
   }
 
   input::placeholder {

@@ -70,7 +70,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const adjustOpacity = () => {
       const factor = 3.7; // Controls the speed of the scroll effect
-      const offset = 500; // Controls when the scroll effect starts
+      const offset = 300; // Controls when the scroll effect starts
       const scrollProgress = factor * (document.documentElement.scrollTop - offset);
       const scrolled = scrollProgress / (document.documentElement.scrollHeight - document.documentElement.clientHeight) * letters.length;
       const fadeRange = 50; // Number of letters over which the opacity will transition
