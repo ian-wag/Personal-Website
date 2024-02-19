@@ -80,6 +80,7 @@
 
 
         document.getElementById("contact-form").style.display = "none";
+        (form as HTMLFormElement).reset();
         const successMessage = document.getElementById("form-success-message");
         successMessage.style.height = formHeight + 'px';
         successMessage.style.display = "flex";
