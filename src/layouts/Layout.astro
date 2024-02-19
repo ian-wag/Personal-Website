@@ -30,6 +30,44 @@ const { title } = Astro.props;
       content="#141414"
     />
 
+    <meta name="title" content={title} />
+    <meta
+      name="description"
+      content="Curious about Ian Wagner's work? Look no further! Discover my recent projects, peek into my creative journey, and feel free to reach out to connect or collaborate!"
+    />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://ianwag.com/"/>
+    <meta
+      property="og:title"
+      content={title}
+    />
+    <meta
+      property="og:description"
+      content="Curious about Ian Wagner's work? Look no further! Discover my recent projects, peek into my creative journey, and feel free to reach out to connect or collaborate!"
+    />
+    <meta
+      property="og:image"
+      content="https://ianwag.com/ian-for-og-meta.jpg"
+    />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://ianwag.com/" />
+    <meta
+      property="twitter:title"
+      content={title}
+    />
+    <meta
+      property="twitter:description"
+      content="Curious about Ian Wagner's work? Look no further! Discover my recent projects, peek into my creative journey, and feel free to reach out to connect or collaborate!"
+    />
+    <meta
+      property="twitter:image"
+      content="https://ianwag.com/ian-for-og-meta.jpg"
+    />
+
     <meta name="generator" content={Astro.generator} />
     <link rel="stylesheet" href="https://use.typekit.net/uec6tst.css" />
     <title>{title}</title>
