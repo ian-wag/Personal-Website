@@ -58,7 +58,7 @@
         <button type="submit">send message</button>  
       </div>
     </form>
-    <div id="form-success-message" style="display: none;">💫 transmission recieved 🚀</div> 
+    <div id="form-success-message" style="display: none;"><p>💫 transmission recieved 🚀</p></div> 
   </div>
 </section>
 <script>
@@ -246,6 +246,15 @@
     color: #1bcb5e;
   }
 
+  #form-success-message p {
+    border: 1px solid var(--primary-text);
+    padding: 2.5rem;
+  }
+
+  #form-error-message {
+    font-size: 1.5rem;
+  }
+
 
   @media only screen and (max-width: 761px) {
     .title-accent {
@@ -268,6 +277,10 @@
 
     button {
       opacity: 1;
+    }
+
+    #form-success-message p {
+      padding: 1.5rem;
     }
   }
   @media screen and (max-width: 1100px) {
