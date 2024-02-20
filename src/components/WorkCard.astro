@@ -1,6 +1,8 @@
 ---
+import { Image } from 'astro:assets';
+
 export interface Props {
-  imgSrc?: string;
+  imgSrc?: any;
   title?: string;
   subtitle?: string;
   agency?: string;
@@ -17,7 +19,7 @@ const { imgSrc, title, subtitle, tags, projectHref, agencyHref, agency } =
   <a target="_blank" title={projectHref} href={projectHref}>
     <div class="work-inner">
       <div class="work-image">
-        <img width="980" height="553" src={imgSrc} alt={title} />
+        <Image src={imgSrc} alt={title} inferSize loading="eager" />
       </div>
       <div class="work-title-wrap">
         <h4 class="emoji-replace">{title}</h4>
