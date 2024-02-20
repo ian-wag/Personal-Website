@@ -67,11 +67,7 @@ import Footer from "../components/Footer.astro";
         header.style.top = ``;
       }
     }
-
-    // Wait for the DOM to load before handling the scroll event
     document.addEventListener("DOMContentLoaded", handleScroll);
-
-    // Add a scroll event listener to handle scrolling after the page has loaded
     window.addEventListener("scroll", handleScroll);
   </script>
   <script>

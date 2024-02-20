@@ -135,6 +135,17 @@ import Resume from "../assets/ian-resume-2024.pdf";
       transform: translateY(-2.8vw);
       padding-left: 0;
     }
+
+    .sticky {
+    position: fixed;
+    width: 98%;
+    z-index: 22;
+    margin-top: -1rem;
+    transition: top 0.4s var(--easeOutCubic), transform 0.4s var(--easeOutCubic);
+    transform: translateY(0vw);
+  }
+
+  
     @media only screen and (max-width: 761px) {
       .grid {
         display: block;
