@@ -1,20 +1,23 @@
 ---
 import Logo from "./Logo.astro";
 import Resume from "../assets/Ian-Wagner-Resume-2024.pdf";
+
+const currentYear = new Date().getFullYear();
 ---
 
 <div class="header-container">
   <div class="dark-mode-time-container">
     <div class="time-date">
       <p>
-        &copy;{new Date().getFullYear()}
+        &copy;{currentYear}
       </p>
     </div>
     <div>
       <a class="header-email mobile-hide" href="mailto:hello@ianwag.com"
         >hello@ianwag.com</a
       ><a class="header-email mobile-show" href="mailto:hi@ianwag.com"
-        >hi@ianwag.com</a>
+        >hi@ianwag.com</a
+      >
     </div>
     <div><a class="header-resume" href={Resume}>resume</a></div>
     <div class="dark-light-toggle">
@@ -137,15 +140,16 @@ import Resume from "../assets/Ian-Wagner-Resume-2024.pdf";
     }
 
     .sticky {
-    position: fixed;
-    width: 98%;
-    z-index: 22;
-    margin-top: -1rem;
-    transition: top 0.4s var(--easeOutCubic), transform 0.4s var(--easeOutCubic);
-    transform: translateY(0vw);
-  }
+      position: fixed;
+      width: 98%;
+      z-index: 22;
+      margin-top: -1rem;
+      transition:
+        top 0.4s var(--easeOutCubic),
+        transform 0.4s var(--easeOutCubic);
+      transform: translateY(0vw);
+    }
 
-  
     @media only screen and (max-width: 761px) {
       .grid {
         display: block;
