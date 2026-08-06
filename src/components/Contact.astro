@@ -17,49 +17,68 @@
       <p>Chicago, Illinois</p>
     </div>
     <h4 class="getintouch">or get in touch here:</h4>
-    <form name="contact" method="POST" data-netlify="true" id="contact-form">
-      <div class="contact-form">
-        <span class="mobile-hide"
-          >Hello, fellow space traveler! My name orbits as</span
+    <form
+      name="contact"
+      method="POST"
+      data-netlify="true"
+      data-netlify-honeypot="bot-field"
+      id="contact-form"
+    >
+      <input type="hidden" name="form-name" value="contact" />
+      <p class="honeypot">
+        <label
+          >leave this empty if you are not a robot: <input name="bot-field" /></label
         >
-        <p class="mobile-show">name:</p>
+      </p>
+      <div class="contact-form">
+        <label for="contact-name">
+          <span class="mobile-hide"
+            >Hello, fellow space traveler! My name orbits as</span
+          >
+          <span class="mobile-show">name:</span>
+        </label>
         <input
           type="text"
-          class=""
           name="name"
           id="contact-name"
           placeholder="enter your name"
-          required=""
+          autocomplete="name"
+          required
         />
-        <span class="mobile-hide"
-          >, transmit signals to my galactic mail at</span
-        >
-        <p class="mobile-show">email:</p>
+        <label for="contact-email">
+          <span class="mobile-hide"
+            >, transmit signals to my galactic mail at</span
+          >
+          <span class="mobile-show">email:</span>
+        </label>
         <input
           type="email"
-          class=""
           name="email"
           id="contact-email"
           placeholder="enter your email"
-          required=""
+          autocomplete="email"
+          required
         />
-        <span class="mobile-hide"
-          >, and here's the essence of my transmission (message):</span
+        <label for="textarea" class="mobile-hide"
+          >, and here's the essence of my transmission (message):</label
         >
       </div>
-      <p class="mobile-show">message:</p>
+      <label for="textarea" class="mobile-show">message:</label>
       <textarea
-        class=""
         id="textarea"
         name="contact-msg"
         placeholder="type your interstellar query, idea, or discovery here..."
-      ></textarea>
+        required></textarea>
       <div>
-        <div id="form-error-message" style="display: none;">❌ Submission failed, please try again.</div>
-        <button type="submit">send message</button>  
+        <div id="form-error-message" role="alert" style="display: none;">
+          ❌ Submission failed, please try again.
+        </div>
+        <button type="submit">send message</button>
       </div>
     </form>
-    <div id="form-success-message" style="display: none;"><p>💫 transmission recieved 🚀</p></div> 
+    <div id="form-success-message" role="status" style="display: none;">
+      <p>💫 transmission received 🚀</p>
+    </div>
   </div>
 </section>
 <script>
@@ -238,6 +257,19 @@
   .mobile-show {
     padding-top: 1rem;
     padding-bottom: 0.5rem;
+  }
+
+  .honeypot {
+    display: none;
+  }
+
+  /* Below 1100px the inline prose is swapped for short labels, which need to
+     sit on their own line the way the old <p> elements did. */
+  @media only screen and (max-width: 1100px) {
+    /* :not() keeps this from outranking .mobile-hide, which must stay hidden. */
+    .contact-form label:not(.mobile-hide) {
+      display: block;
+    }
   }
 
   #form-success-message {
