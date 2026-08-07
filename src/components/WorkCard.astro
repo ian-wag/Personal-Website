@@ -108,12 +108,21 @@ const { imgSrc, title, subtitle, tags, projectHref, agency } =
   }
 
   @media (max-width: 900px) {
+    /* No hover on touch screens — keep the thumbnail visible instead. */
+    .work-image,
     .work-inner:hover .work-image {
-      margin-left: -18rem;
+      width: auto;
+      margin-left: 0;
+      margin-right: 1rem;
+    }
+
+    .work-image img {
+      width: 6rem;
+      display: block;
     }
 
     .container {
-      padding: 0;
+      padding: 0.5rem 0;
     }
 
     .work-icon {

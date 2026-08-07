@@ -1,6 +1,6 @@
 ---
 import Logo from "./Logo.astro";
-import Resume from "../assets/Ian-Wagner-Resume-2024.pdf";
+import Resume from "../assets/2026_Ian_Wagner_Resume.pdf";
 
 const currentYear = new Date().getFullYear();
 ---
@@ -71,6 +71,11 @@ const currentYear = new Date().getFullYear();
         <li>
           <a href="https://github.com/ian-wag" target="_blank"
             ><span class="links-hover nav-item emoji-replace">Github</span></a
+          >
+        </li>
+        <li>
+          <a class="header-resume" href={Resume} target="_blank"
+            ><span class="links-hover nav-item emoji-replace">Resume</span></a
           >
         </li>
       </ul>
