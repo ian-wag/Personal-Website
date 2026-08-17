@@ -1,9 +1,28 @@
 <section id="about" class="about">
   <div class="section-content">
-    <h3 class="section-title"><span class="title-accent emoji-replace">about</span> <span class="mobile-hide">me</span></h3>
-    <p class="scroll-reveal-effect">Greetings! I'm a web developer passionate about merging creativity with technology to craft stunning, interactive online experiences. My journey from the hospitality industry to web development has equipped me with a unique blend of skills, allowing me to manage multiple projects efficiently while fostering outstanding teamwork and client relationships. This background has been instrumental in my approach to web development, pushing me to innovate and consistently exceed expectations. 
-      
-These days I'm a web developer at EverPass Media, where I build and maintain the custom WordPress platform behind everpass.com and own the analytics and CRM stack wired into it — GA4, Google Tag Manager, Salesforce, and HubSpot. When I'm not working, I'm on a quest for the ultimate cup of coffee, getting lost in a great book, or aspiring to reach my grandma's skill level in crossword puzzles. If you're interested in having a conversation or just want to share your favorite book, reach out. Let's connect!</p>
+    <h3 class="section-title">
+      <span class="title-accent emoji-replace">about </span>
+      <span class="mobile-hide">me</span>
+    </h3>
+    <p class="scroll-reveal-effect">
+      I build websites and occasionally convince a collection of unrelated tools
+      to cooperate with each other.
+      <br /><br />
+      Most of my work lives somewhere between development, analytics, digital platforms,
+      and solving whatever strange problem showed up that day. I like building useful
+      things, figuring out how systems fit together, and tracking down bugs that definitely
+      “weren’t there yesterday.”
+      <br /><br />
+      I’m naturally curious, probably ask too many “what happens if…” questions, and
+      tend to enjoy the projects where there isn’t an obvious answer at the start.
+      <br /><br />
+      Away from the computer, I'm usually hunting down good coffee, partway through
+      a book, or continuing a very one-sided rivalry with my grandma over crossword
+      puzzles.
+      <br /><br />
+      Have a project, question, book recommendation, or strong coffee opinion? I’m
+      always happy to chat.
+    </p>
   </div>
   <script>
     document.addEventListener("DOMContentLoaded", () => {
@@ -11,10 +30,30 @@ These days I'm a web developer at EverPass Media, where I build and maintain the
         const textWrapper = document.querySelector(".scroll-reveal-effect");
 
         if (textWrapper) {
-          textWrapper.innerHTML = textWrapper.textContent.replace(
-            /\S/g,
-            "<span class='letter'>$&</span>"
-          );
+          const originalNodes = Array.from(textWrapper.childNodes);
+          textWrapper.innerHTML = "";
+
+          originalNodes.forEach((node) => {
+            if (node.nodeType === Node.TEXT_NODE) {
+              const text = node.textContent ?? "";
+
+              text.split("").forEach((character) => {
+                if (character === " ") {
+                  textWrapper.appendChild(document.createTextNode(" "));
+                  return;
+                }
+
+                const letter = document.createElement("span");
+                letter.className = "letter";
+                letter.textContent = character;
+                textWrapper.appendChild(letter);
+              });
+            }
+
+            if (node.nodeName === "BR") {
+              textWrapper.appendChild(document.createElement("br"));
+            }
+          });
 
           const letters = document.querySelectorAll("#about .letter");
 
@@ -54,57 +93,57 @@ These days I'm a web developer at EverPass Media, where I build and maintain the
 </section>
 
 <style>
-.about {
-  position: relative;
-  display: block;
-  margin: 0 auto;
-}
+  .about {
+    position: relative;
+    display: block;
+    margin: 0 auto;
+  }
 
-.section-content {
-  margin: 0 auto;
-  overflow-x: hidden;
-}
+  .section-content {
+    margin: 0 auto;
+    overflow-x: hidden;
+  }
 
-.section-title {
-  font-size: 3.5rem;
-  color: var(--grey);
-}
-
-.section-content p {
-  width: 80rem;
-  max-width: 100%;
-  margin: 0 auto;
-  font-size: 2.5rem;
-  color: var(--body-text);
-  font-family: var(--neue-text);
-  line-height: 1.7;
-  white-space: pre-wrap;
-}
-
-.title-accent {
-  color: var(--primary-text);
-  font-weight: 700;
-  font-size: 6rem;
-}
-
-.about span.letter {
-  font-family: var(--neue-text);
-  font-size: 2.5rem;
-  color: var(--body-text);
-  opacity: 0.1;
-  transition: opacity 1s linear;
-}
-
-@media only screen and (max-width: 761px) {
-  .title-accent {
-    font-size: 4rem;
+  .section-title {
+    font-size: 3.5rem;
+    color: var(--grey);
   }
 
   .section-content p {
-    font-size: 1.2rem;
-    padding-top: 2rem;
+    width: 80rem;
+    max-width: 100%;
+    margin: 0 auto;
+    font-size: 2.5rem;
+    color: var(--body-text);
+    font-family: var(--neue-text);
     line-height: 1.7;
-    letter-spacing: 1px;
+    white-space: normal;
   }
-}
+
+  .title-accent {
+    color: var(--primary-text);
+    font-weight: 700;
+    font-size: 6rem;
+  }
+
+  .about span.letter {
+    font-family: var(--neue-text);
+    font-size: 2.5rem;
+    color: var(--body-text);
+    opacity: 0.1;
+    transition: opacity 1s linear;
+  }
+
+  @media only screen and (max-width: 761px) {
+    .title-accent {
+      font-size: 4rem;
+    }
+
+    .section-content p {
+      font-size: 1.2rem;
+      padding-top: 2rem;
+      line-height: 1.7;
+      letter-spacing: 1px;
+    }
+  }
 </style>

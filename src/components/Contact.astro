@@ -5,7 +5,7 @@
 <section id="contact">
   <div class="section-content">
     <h3 class="section-title">
-      <span class="title-accent emoji-replace">contact</span>
+      <span class="title-accent emoji-replace">contact </span>
       <span class="mobile-hide">info</span>
     </h3>
     <div class="info">
@@ -27,7 +27,9 @@
       <input type="hidden" name="form-name" value="contact" />
       <p class="honeypot">
         <label
-          >leave this empty if you are not a robot: <input name="bot-field" /></label
+          >leave this empty if you are not a robot: <input
+            name="bot-field"
+          /></label
         >
       </p>
       <div class="contact-form">
@@ -82,38 +84,42 @@
   </div>
 </section>
 <script>
-  document.getElementById("contact-form").addEventListener("submit", function (e) {
-    e.preventDefault();
-    const form = e.target;
-    const data = new FormData(form as HTMLFormElement);
+  document
+    .getElementById("contact-form")
+    .addEventListener("submit", function (e) {
+      e.preventDefault();
+      const form = e.target;
+      const data = new FormData(form as HTMLFormElement);
 
-    fetch("/", {
-      method: "POST",
-      body: data,
-      headers: {
-        "Accept": "application/json",
-      },
-    })
-    .then(response => {
-      if (response.ok) {
-        const formHeight = (form as HTMLFormElement).offsetHeight;
+      fetch("/", {
+        method: "POST",
+        body: data,
+        headers: {
+          Accept: "application/json",
+        },
+      })
+        .then((response) => {
+          if (response.ok) {
+            const formHeight = (form as HTMLFormElement).offsetHeight;
 
-
-        document.getElementById("contact-form").style.display = "none";
-        (form as HTMLFormElement).reset();
-        const successMessage = document.getElementById("form-success-message");
-        successMessage.style.height = formHeight + 'px';
-        successMessage.style.display = "flex";
-      } else {
-        document.getElementById("form-error-message").style.display = "block";
-        console.error("Form submission failed");
-      }
-    })
-    .catch(error => {
-      document.getElementById("form-error-message").style.display = "block";
-      console.error("Error:", error);
+            document.getElementById("contact-form").style.display = "none";
+            (form as HTMLFormElement).reset();
+            const successMessage = document.getElementById(
+              "form-success-message",
+            );
+            successMessage.style.height = formHeight + "px";
+            successMessage.style.display = "flex";
+          } else {
+            document.getElementById("form-error-message").style.display =
+              "block";
+            console.error("Form submission failed");
+          }
+        })
+        .catch((error) => {
+          document.getElementById("form-error-message").style.display = "block";
+          console.error("Error:", error);
+        });
     });
-  });
 </script>
 
 <style>
